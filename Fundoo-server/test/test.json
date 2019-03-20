@@ -1,0 +1,21 @@
+{
+	"register":{
+		"firstname" : "anua",
+		"lastname" : "ggg",
+		"email" : "anus@gmail.com",
+		"password" : "Ssaaa@123456"
+	},
+	"login":{
+		"email" : "anus@gmail.com",
+		"password" :"Ssaaa@123456"
+	},
+	"forgotPassword":{
+		"email":"anus@gmail.com"
+
+	},
+	"resetPassword":{
+        "password":"Ssaaa@12",
+        "headers":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7fSwiaWF0IjoxNTUyMzgxNDk5LCJleHAiOjE1NTIzODg2OTl9.FT7XMPksBvtXqBuQwKoQk0RwFBewqPlCY3RkKuuSEO8"
+	}
+   
+}
