@@ -1,3 +1,4 @@
+
 .mat-card {
     margin: auto;
     height: 550px;
@@ -54,4 +55,56 @@
     margin-top: 05%;
     font-size: 130%;
     margin-left: 3%
+  }
+  .register{
+    font-family: 'sans-serif';
+    // font: bold;
+    margin-top: 05%;
+    font-size: 130%;
+    margin-left: 3%;
+    color: black;
+  margin-top: 2%
+  }
+  .firstname{ 
+    margin-left: 3%
+  }
+  .firstnameinput{
+    width: 40%;
+  }
+ .lastnameinput{
+      width: 40%;
+    }
+  .emailid{
+    margin-left: 3%
+  }
+  .email{
+    width: 82%
+  }
+  #passwordid {
+    margin-left: 3%
+  }
+  .password{
+    width: 37%
+  }
+  .confirmpassword{
+    width: 37%
+  }
+  #suffix{
+    margin-top: 3%
+  }
+  .sinin-link{
+    color: #4285F4;
+    margin-left: 1%;
+    font-size: 90%
+  }
+  #sign-button{
+    background: #1a73e8;
+    font-family: 'sans-serif';
+    // width: 30%;
+    margin-left: 60%;
+    color: white;
+    margin-top: -4%
+  }
+  body{
+    overflow-y: hidden  
   }

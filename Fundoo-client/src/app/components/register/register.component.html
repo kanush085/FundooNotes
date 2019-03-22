@@ -1,22 +1,77 @@
 <html>
+    <body>
 <div>
   <mat-card fxFlex="60" class="card" fxFlex.xs="100">
+
     <div>
-      <mat-card-title class="fundooregister"  fxLayout="row" fxLayoutAlign="start center"   >
+      <mat-card-title class="fundooregister" fxLayout="row" fxLayoutAlign="start center">
         <span class="f">F</span>
-          <span class="u">u</span>
-          <span class="n">n</span>
-          <span class="d">d</span>
-          <span class="o">o</span>
-          <span class="oo">o</span>
+        <span class="u">u</span>
+        <span class="n">n</span>
+        <span class="d">d</span>
+        <span class="o">o</span>
+        <span class="oo">o</span>
       </mat-card-title>
     </div>
+    <div>
+      <!-- <mat-card-title class="signup" fxLayout="row" fxLayoutAlign="center center">Sign In</mat-card-title> -->
+      <mat-card-subtitle class="register" div fxLayout="row" fxLayoutAlign="start center"> Create your Fundoo Account</mat-card-subtitle>
+    </div>
+
+    <div class="firstname" fxLayout="row" fxLayout.xs="column" fxLayoutGap="2%">
+      <mat-form-field appearance="outline" class="firstnameinput">
+        <mat-label>First name</mat-label>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="lastnameinput">
+        <mat-label>Last name</mat-label>
+        <input matInput placeholder="Last name">
+      </mat-form-field>
+    </div>
+    <div class="emailid" fxLayout="column" fxLayoutAlign="start start">
+      <mat-form-field appearance="outline" class="email">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username@gmail.com">
+      </mat-form-field>
+    </div>
+    <div id="passwordid" fxLayout="row" fxLayout.xs="column" fxLayoutGap="2%">
+      <mat-form-field appearance="outline" class="password">
+        <mat-label> Password</mat-label>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="confirmpassword">
+        <mat-label> Confirm password</mat-label>
+        <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'">
+      </mat-form-field>
+      <mat-icon id="suffix" matSuffix (click)="hide = !hide">{{
+        hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+    </div>
+    <div class="signup-in">
+          
+
+        <button
+        mat-button
+        (click)="login()"
+        class="sinin-link"
+        fxLayoutAlign="center center"
+      >
+        Sign in insted
+      </button>
+
+      <button
+      id="sign-button" mat-button (click)="login()"
+      fxLayoutAlign="center center"
+      mat-raised-button
+      mat-button aria-label="Show an example snack-bar"> 
+      Sign up
+    </button>
+    </div>
+  
   </mat-card>
 
-
-
-
-
 </div>
+
+</body>
 
 </html>
