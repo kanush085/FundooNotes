@@ -2,15 +2,15 @@
 	"register":{
 		"firstname" : "anua",
 		"lastname" : "ggg",
-		"email" : "anus@gmail.com",
+		"email" : "anush@gmail.com",
 		"password" : "Ssaaa@123456"
 	},
 	"login":{
-		"email" : "anus@gmail.com",
+		"email" : "anush@gmail.com",
 		"password" :"Ssaaa@123456"
 	},
 	"forgotPassword":{
-		"email":"anus@gmail.com"
+		"email":"anush@gmail.com"
 
 	},
 	"resetPassword":{
