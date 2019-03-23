@@ -17,7 +17,7 @@ exports.registration = (data, callBack) => {
     userModel.registration(data, (err, result) => {
         if (err) {
             console.log("service error");
-            return callBack(error)
+            return callBack(err)
 
         }
         else {
