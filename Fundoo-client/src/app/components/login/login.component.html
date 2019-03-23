@@ -14,20 +14,36 @@
       </div>
       <div>
         <mat-card-title class="signin" fxLayout="row" fxLayoutAlign="center center">Sign In</mat-card-title>
-        <mat-card-subtitle div fxLayout="row" fxLayoutAlign="center center"
+        <mat-card-subtitle class="account"div fxLayout="row" fxLayoutAlign="center center"
         >Use your Fundoo Account</mat-card-subtitle
       >
       </div>
       <div fxLayout="column" fxLayoutAlign="start start" >
         <mat-form-field appearance="outline" class="email">
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="Enter your emial">
+          <input matInput placeholder="Enter your email"
+          [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher">
+          <mat-error
+              *ngIf="
+                emailFormControl.hasError('email') &&
+                !emailFormControl.hasError('required')
+              "
+            >
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
       </div>
       <div fxLayout="column" fxLayoutAlign="start start ">
           <mat-form-field appearance="outline" class="password">
               <mat-label>Enter your password</mat-label>
-              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" 
+              [formControl]="password"
+              autocomplete="off"
+              requried>
               <mat-icon  matSuffix (click)="hide = !hide" >{{
                   hide ? "visibility_off" : "visibility"
                 }}</mat-icon>
