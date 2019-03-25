@@ -22,11 +22,15 @@ const exp = require('express-validator')
  * @param:request and response.
  */
 exports.registration = (req, res) => {
-    console.log("inside register");
+    console.log("req-------", req.body);
+
+    console.log("..................inside register.............");
     req.checkBody('firstname', 'Firstname is not valid').isLength({ min: 3 }).isAlpha();
     req.checkBody('lastname', 'Lastname is not valid').isLength({ min: 3 }).isAlpha();
     req.checkBody('email', 'Email is not valid').isEmail();
-    req.checkBody('password', 'password is not valid').isLength({ min: 4 });
+    req.checkBody('password', 'password is not valid').isLength({ min: 4 })
+    console.log("register validation done");
+
     var errors = req.validationErrors();
     var response = {};
     if (errors) {
@@ -137,7 +141,10 @@ exports.forgotPassword = (req, res) => {
                     console.log("url in contoller==>", url);
 
                     sentMail.sendEMailFunction(url)
-                    res.status(200).send(url)
+                    res.status(200).send({
+                        msg:"success",
+                        url:url
+                    })
                 }
             })
         }
