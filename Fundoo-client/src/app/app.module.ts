@@ -28,6 +28,7 @@ import { MatSnackBarModule } from "@angular/material";
     ResetpasswordComponent,
     DashboardComponent,
 
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ import { MatSnackBarModule } from "@angular/material";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule 
    
     
   ],

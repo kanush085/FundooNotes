@@ -11,4 +11,14 @@ export class UserService {
   login(body: any) {
     return this.service.postUser(body, "login");
   }
+
+  register(body:any){
+    return this.service.postUser(body,"register")
+  }
+  forgotPassword(body:any){
+    return this.service.postUser(body,"forgotpassword")
+  }
+  // resetpassword(body:any){
+  //   return this.service.postUser(body,"resetpassword")
+  // }
 }

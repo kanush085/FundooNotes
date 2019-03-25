@@ -3,7 +3,7 @@ import { FormControl,FormGroupDirective, NgForm, Validators  } from '@angular/fo
 import{Router}from '@angular/router'
 import{ErrorStateMatcher}from'@angular/material/core';
  import { MatSnackBar } from '@angular/material';
-import{HttpService} from "../../service/http/http.service"
+// import{HttpService} from "../../service/http/http.service"
  import{UserService} from "../../service/userservice/userservices.service"
 
 import { from } from 'rxjs';
@@ -24,7 +24,7 @@ export class MyErrorStateMatcher implements  ErrorStateMatcher{
 })
 export class LoginComponent implements OnInit {
   response:any;
-  constructor( private httpService: HttpService,private router:Router,public userService:UserService,private snackBar: MatSnackBar,) {}
+  constructor(private router:Router,public userService:UserService,private snackBar: MatSnackBar,) {}
 
   ngOnInit() {
   }
@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
   
   login(){
     try {
-      if( this.emailFormControl.value == "" || this.password.value == "") throw "fields cannot be empty"
+      if( this.emailFormControl.value == "" || this.password.value == "") {
+       throw "Fields cannot be empty...!"
+      }
       var model={
         email:this.emailFormControl.value,
         password:this.password.value
@@ -45,6 +47,8 @@ export class LoginComponent implements OnInit {
 this.userService.login(model).subscribe(data =>{
   console.log(data);
   this.response=data;
+  localStorage.setItem('token',this.response.token)
+  localStorage.setItem('userid',this.response._id)
   this.snackBar.open("Logged in successfully..!","ok",{duration:5000})
   this.router.navigate(['dashboard'])
 },error=>{
@@ -55,6 +59,7 @@ this.userService.login(model).subscribe(data =>{
      
      
     } catch (error) {
+      this.snackBar.open(error,"ok",{duration:20000})
       console.log(error);
       
     }
