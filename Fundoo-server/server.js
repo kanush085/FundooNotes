@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
  * Configuring the database.
  */
 const app = express();
-app.use(function (req, res, next) {
+app.use(function (req, res, next) {                                             
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -40,8 +40,8 @@ const dbConfig = require('./config/config');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-var cors = require('cors')
-app.use(cors())
+// var cors = require('cors')
+// app.use(cors())
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
