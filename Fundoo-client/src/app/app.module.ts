@@ -18,6 +18,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MatSnackBarModule } from "@angular/material";
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
+import { MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,8 @@ import { MatSnackBarModule } from "@angular/material";
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
+
+
 
 
   ],
@@ -43,7 +51,13 @@ import { MatSnackBarModule } from "@angular/material";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule 
+    MatSnackBarModule,
+    MatSidenavModule ,
+    MatToolbarModule,
+    MatListModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatMenuModule
    
     
   ],

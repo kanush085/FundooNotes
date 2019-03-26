@@ -1,0 +1,162 @@
+.tool{
+  background-color: aqua
+}
+
+// .example-container {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// } 
+
+// .example-container {
+//   width: 400px;
+//   height: 200px;
+//    margin: 12px;
+//   // border: 1px solid #555;
+// }
+
+// .mat-drawer-content {
+//   padding: 12px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+// }
+
+
+// .example-container {
+//   width: 500px;
+//   height: 300px;
+//   border: 1px solid rgba(0, 0, 0, 0.5);
+// }
+
+// .example-sidenav-content {
+//   display: flex;
+//   height: 100%;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .example-sidenav {
+//   padding: 20px;
+//   height: 1000px;
+// }
+@font-face {
+  font-family: googlefonts;
+  src: url("../../fonts/GoogleSans-Regular.ttf");
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+  #google-keep-logo{
+    height: 6%;
+    position: absolute;
+    width: 3%;
+    margin-top: -.5%;
+    padding-right: 4px;
+  }
+  .fundoo{
+    display: inline-block;
+    font-family: 'Product Sans',Arial,sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    padding-left: 48px;
+    position: relative;
+    top: 0.5px;
+    vertical-align: middle;
+    color: dimgrey; 
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased
+}
+// .f{
+//     color: #4285F4;
+//     font-weight: bold;
+//     // font-family: 'googlefonts',arial,sans-serif;
+//     text-align: center
+//   }
+//   .u{
+//     color: #EA4335;
+//     font-weight: bold;
+//     // font-family: sans-serif;
+//     text-align: center
+    
+//   }
+//   .n{
+//     color: #FBBC05;
+//     font-weight: bold;
+//     // font-family: sans-serif;
+//     text-align: center
+  
+//   }
+//   .d{
+//     color: #4285F4;
+//     font-weight: bold;
+//     // font-family: sans-serif;
+//     text-align: center
+  
+//   }
+//   .o{
+//     color: #34A853;
+//     font-weight: bold;
+//     // font-family: sans-serif;
+//     text-align: center
+  
+//   }
+//   .oo{
+//     color: #EA4335;
+//     font-weight: bold;
+//     // font-family: sans-serif;
+//     text-align: center;
+//   } 
+  .example-app-name {
+    margin-bottom: 3px;
+    padding-right: 4px;
+    border: 0;
+    vertical-align: middle;
+    }
+
+    .search {
+      margin-left: 25%;
+    
+      border: 1px;
+    }
+    .search {
+      border-radius: 10%;
+      margin-left: 21%;
+      width: 100%;
+      line-height: 2;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 11px 16px 11px 16px;
+      box-sizing: border-box;
+    }
+    // .searchBar{
+    //   display: flex;
+    //   width: 50%;
+    //   border-radius: 2%
+    // }
+
+    .example-toolbar {
+       background-color: inherit;
+      border-bottom-style: ridge;
+     border-color: white;
+      outline: none;
+      
+    }
+    .settingbtn{
+      color: dimgrey
+    }
+    .apps {
+      display: flex;
+      flex-direction: row;
+      width: 4%;
+    }

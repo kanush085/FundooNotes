@@ -19,7 +19,7 @@
       <div fxLayout="column" fxLayoutAlign="start start">
         <mat-form-field appearance="outline" class="email">
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="Enter your email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+          <input matInput placeholder="Enter your email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" required> 
           <mat-error *ngIf="
                 emailFormControl.hasError('email') &&
                 !emailFormControl.hasError('required')
@@ -35,9 +35,9 @@
         <mat-form-field appearance="outline" class="password">
           <mat-label>Enter your password</mat-label>
           <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="password"
-          [errorStateMatcher]="matcher"autocomplete="off" requried>
+          [errorStateMatcher]="matcher" autocomplete="off" required>
           <mat-error *ngIf="password.hasError('required')">
-            password required*
+            password required
           </mat-error>
           <mat-icon matSuffix (click)="hide = !hide">{{
             hide ? "visibility_off" : "visibility"
