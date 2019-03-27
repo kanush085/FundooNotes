@@ -1,3 +1,4 @@
+@import "../../scss/colour.scss";
 
 .toolbar{
   display: flex;
@@ -95,9 +96,9 @@
   color: white;
 }
 
-// #refresh {
-//   margin-left: 10%;
-// }
+#refresh {
+  margin-left: 10%;
+}
 
 .example-container {
   display: flex;
@@ -109,15 +110,15 @@
   right: 0;
 }
 
-// .example-is-mobile .example-toolbar {
-//   position: fixed;
-//   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-//   z-index: 2;
-// }
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
 
-// h1.example-app-name {
-//   margin-left: 8px;
-// }
+h1.example-app-name {
+  margin-left: 8px;
+}
 
 .example-sidenav-container {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
@@ -132,11 +133,10 @@
   flex: 1 0 auto;
 }
 .example-header-image {
-  // backgrou d-image: url("../../../assets/image/profile.jpg");
+  background-image: url("../../../assets/image/profile.jpg");
   background-size: cover;
   background-color: aqua;
   border-radius: 50%;
-  margin-left: -77%
 }
 .menu-button {
   width: 20%;
@@ -158,16 +158,16 @@
   border-color: white;
 }
 
-// #rema {
-//   font-size: 20px;
-//   font-family: sans-serif;
-// }
+#rema {
+  font-size: 20px;
+  font-family: sans-serif;
+}
 mat-sidenav {
   width: 250px;
 }
 
 .search {
-  margin-left: 21%;
+  margin-left: 25%;
 
   border: 1px;
 }
@@ -198,70 +198,56 @@ mat-sidenav {
   background-color: white;
 }
 
-// .example-is-mobile .example-toolbar {
-//   position: fixed;
-//   z-index: 2;
-// }
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  z-index: 2;
+}
 
-// h1.example-app-name {
-//   margin-left: 2%;
-// }
+h1.example-app-name {
+  margin-left: 2%;
+}
 
-  // .example-is-mobile .example-sidenav-container {
-  //   flex: 1 0 auto;
-  // }
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
 
-// #para {
-//   margin-left: 9%;
-// }
+#para {
+  margin-left: 9%;
+}
 
-// .settings {
-//   display: flex;
-//   flex-direction: row;
-//   float: right;
-// }
-// .apps {
-//   display: flex;
-//   flex-direction: row;
-//   width: 4%;
-// }
+.settings {
+  display: flex;
+  flex-direction: row;
+  float: right;
+}
+.apps {
+  display: flex;
+  flex-direction: row;
+  width: 4%;
+}
 
-// .example-toolbar {
-//   display: flex;
-//   flex-direction: row;
-// }
+.example-toolbar {
+  display: flex;
+  flex-direction: row;
+}
 
-// #username {
-//   font: bold;
-//   margin-left: 40%;
-// }
+#username {
+  font: bold;
+  margin-left: 40%;
+}
 
-// .matMenu {
-//   width: 10px;
-// }
+.matMenu {
+  width: 10px;
+}
 
-// .mat-raised-button:not([class*="mat-elevation-z"]) {
-//   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-//     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-//   margin-left: 36%;
-// }
+.mat-raised-button:not([class*="mat-elevation-z"]) {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-left: 36%;
+}
 
 .mat-stroked-button:not([class*="mat-elevation-z"]) {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
     0 0 0 0 rgba(0, 0, 0, 0.12);
   width: 140px;
-}
-.mat-list-item
-{
-  color: #202124;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 0 16px;
-  position: relative;
-  height: inherit;
-  border-radius: 0 25px 25px 0;
-  // background-color: yellow;
- 
 }

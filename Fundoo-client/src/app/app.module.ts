@@ -24,7 +24,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { MatMenuModule} from '@angular/material/menu';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,9 @@ import { MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTooltipModule,
+    MatDialogModule
    
     
   ],
