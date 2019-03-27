@@ -25,8 +25,8 @@ exports.registration = (req, res) => {
     console.log("req-------", req.body);
 
     console.log("..................inside register.............");
-    req.checkBody('firstname', 'Firstname is not valid').isLength({ min: 3 }).isAlpha();
-    req.checkBody('lastname', 'Lastname is not valid').isLength({ min: 3 }).isAlpha();
+    req.checkBody('firstname', 'First name is min 3 char alphbets').isLength({ min: 3 }).isAlpha();
+    req.checkBody('lastname', 'Last name is not valid').isLength({ min: 3 }).isAlpha();
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('password', 'password is not valid').isLength({ min: 4 })
     console.log("register validation done");
@@ -76,7 +76,7 @@ exports.login = (req, res) => {
             return res.status(422).send(response);
         }
         else {
-            // var obj = { email: req.body.email, password: req.body.password }
+             var obj = { email: req.body.email, password: req.body.password }
             userService.login(req.body, (err, result) => {
                 if (err) {
                     return res.status(500).send({
