@@ -113,7 +113,7 @@
    <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon matTooltip="Main menu">menu</mat-icon>
+         <mat-icon matTooltip="Main menu">menu</mat-icon>
       </button>
   
       <div fxFlex="2">
@@ -135,18 +135,13 @@
               fxLayout="row"
               fxLayoutAlign="end center"    
             >
-            <span class="u">F</span>
-              <span class="u">u</span>
-              <span class="n">n</span>
-              <span class="d">d</span>
-              <span class="o">o</span>
-              <span class="oo">o</span>
+            <span >Fundoo</span>
             </mat-card-title>
           </h3>
         </div>
       </div>
   
-      <div fxFlex="74" fxLayoutAlign="end start">
+      <div fxFlex="73" fxLayoutAlign="end start">
         <mat-form-field
           appearance="outline"
           fxHide.xs 
@@ -171,7 +166,7 @@
       </div>
   
       <div fxFlex="25" class="settingbtn">
-        <button mat-icon-button color="basic" id="refresh" matTooltip="Refresh">
+        <button mat-icon-button color="basic" id="refresh" matTooltip="Refresh" (click)="refresh()">
           <mat-icon>refresh</mat-icon>
         </button>
   
@@ -211,11 +206,11 @@
           <button mat-menu-item>Keyboard Shortcuts</button>
         </mat-menu>
   
-        <button mat-icon-button color="basic" matTooltip="Apps" class="apps">
+        <!-- <button mat-icon-button color="basic" matTooltip="Apps" class="apps">
           <mat-icon
             ><img src="../../../assets/outline-apps-24px.svg  "
           /></mat-icon>
-        </button>
+        </button> -->
         
       </div>
   
@@ -250,10 +245,10 @@
           </div>
   
           <div fxLayout="row" fxLayoutAlign="center start" class="userNameinf">
-            <p>Kiran B E</p>
+            <p>{{username}}</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="center center">
-            <p class="userEmail">bekiranabbi@gmail.com</p>
+            <p class="userEmail">{{email}}</p>
           </div>
   
           <mat-divider></mat-divider>
@@ -299,7 +294,7 @@
   
             <mat-divider></mat-divider>
             <div>
-            <p id="para">LABELS</p>
+            <p id="para">labels</p>
             <mat-list-item role="listitem" (click)="openLabel()" id="lable">
               <img  id="img2" src="../../../assets/EditLabel.svg" />
               Edit label
@@ -321,7 +316,8 @@
           </mat-list>
         </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content>
+      <mat-sidenav-content  >
+        
         <router-outlet> </router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>

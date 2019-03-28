@@ -24,6 +24,7 @@ export class MyErrorStateMatcher implements  ErrorStateMatcher{
 })
 export class LoginComponent implements OnInit {
   response:any;
+  
   constructor(private router:Router,public userService:UserService,private snackBar: MatSnackBar,) {}
 
   ngOnInit() {
@@ -49,6 +50,8 @@ this.userService.login(model).subscribe(data =>{
   this.response=data;
   localStorage.setItem('token',this.response.token)
   localStorage.setItem('userid',this.response._id)
+  localStorage.setItem('email',this.emailFormControl.value)
+  localStorage.setItem('name',this.response.name)
   this.snackBar.open("Logged in successfully..!","ok",{duration:5000})
   this.router.navigate(['dashboard'])
 },error=>{

@@ -85,7 +85,7 @@
 .search {
   border-radius: 10%;
   margin-left: - 28%;
-  width: 100%;
+  width: 70%;
   line-height: 2;
   background: rgba(0, 0, 0, 0.04);
   border: none;
@@ -132,11 +132,12 @@
   flex: 1 0 auto;
 }
 .example-header-image {
-  // backgrou d-image: url("../../../assets/image/profile.jpg");
+  background-image: url("../../../assets/PhotoGrid_1393513408061[1].jpg");
   background-size: cover;
-  background-color: aqua;
+  background-position: center;
+  height: 100%;
   border-radius: 50%;
-  margin-left: -77%
+  margin-left: -2%;
 }
 .menu-button {
   width: 20%;
@@ -146,9 +147,6 @@
   display: flex;
   justify-content: space-between;
   padding: 25px 45px;
-}
-#user-image-button {
-  margin-left: 6%;
 }
 .profileMenu {
   min-width: 200px;
@@ -211,9 +209,32 @@ mat-sidenav {
   //   flex: 1 0 auto;
   // }
 
-// #para {
-//   margin-left: 9%;
-// }
+#para {
+  // margin-left: 9%;
+  padding: 15px 24px 10px;
+  color: #5f6368;
+  cursor: default;
+  letter-spacing: .07272727em;
+  font-family: Roboto,Arial,sans-serif;
+  font-size: .6875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+.fundoo{
+  display: inline-block;
+  font-family: 'Product Sans',Arial,sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  padding-left: 8px;
+  position: relative;
+  top: 1.5px;
+  vertical-align: middle;
+  color: grey
+}
+
+
+
 
 // .settings {
 //   display: flex;
@@ -236,16 +257,21 @@ mat-sidenav {
 //   margin-left: 40%;
 // }
 
-// .matMenu {
-//   width: 10px;
-// }
+.matMenu {
+  width: 10px;
+}
 
 // .mat-raised-button:not([class*="mat-elevation-z"]) {
 //   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
 //     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 //   margin-left: 36%;
 // }
-
+#user-image-button[_ngcontent-c1] {
+  margin-left: 6%;
+  background-image: url('../../../assets/PhotoGrid_1393513408061[1].jpg');
+  background-size: cover;
+  background-position: center;
+}
 .mat-stroked-button:not([class*="mat-elevation-z"]) {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14),
     0 0 0 0 rgba(0, 0, 0, 0.12);
@@ -265,3 +291,12 @@ mat-sidenav {
   // background-color: yellow;
  
 }
+.mat-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 36px;
+}
+
+
