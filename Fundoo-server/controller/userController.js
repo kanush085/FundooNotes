@@ -77,7 +77,7 @@ exports.login = (req, res) => {
         }
         else {
              var obj = { email: req.body.email, password: req.body.password }
-            userService.login(req.body, (err, result) => {
+            userService.login(obj, (err, result) => {
                 if (err) {
                     return res.status(500).send({
                         message: err
@@ -88,6 +88,7 @@ exports.login = (req, res) => {
                     response.success = true;
                     response._id = result[0]._id;
                     response.token = token;
+                    response.name= result[0].firstname;
                     return res.status(200).send(response);
 
                 }
