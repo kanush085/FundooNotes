@@ -232,8 +232,10 @@ mat-sidenav {
   vertical-align: middle;
   color: grey
 }
-
-
+.active{
+  background-color: #feefc3;
+  border-radius: 0 25px 25px 0;
+}
 
 
 // .settings {
@@ -299,4 +301,12 @@ mat-sidenav {
   width: 36px;
 }
 
-
+/deep/ .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgba(0,0,0,.08);
+  }
+  .ng-hide:not(.ng-hide-animate) {
+    /* These are just alternative ways of hiding an element */
+    display: block!important;
+    position: absolute;
+ 
+  }

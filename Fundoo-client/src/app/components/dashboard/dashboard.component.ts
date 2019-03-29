@@ -12,11 +12,12 @@ import { ChangeDetectorRef, OnDestroy } from "@angular/core";
 
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
-  message: any;
+  message: string='Fundoo';
   Search: string;
   labelList: any;
   email: string;
   username:string;
+  flag:boolean = true;
   private _mobileQueryListener: () => void;
   constructor(media: MediaMatcher,
     private router: Router,
@@ -41,5 +42,22 @@ export class DashboardComponent implements OnInit {
   }
   refresh(): void {
     window.location.reload();
+    
 }
+note(){
+  this.message="Fundoo"
+ 
+}
+
+reminders(){
+  this.message="Reminders"
+}
+
+trashBox(){
+  this.message="Trash"
+}
+archive(){
+  this.message="Archive"
+}
+
 }

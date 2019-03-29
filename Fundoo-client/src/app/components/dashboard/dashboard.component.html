@@ -118,6 +118,7 @@
   
       <div fxFlex="2">
         <div
+          
           fxFlex="10"
           fxLayout="row"
           fxFlex.gt="500px"
@@ -127,7 +128,7 @@
           <img
             id="google-keep-logo"
             src="../../../assets/icons8-google-keep.svg"
-          />
+            fxHide.xs/>
   
           <h3 class="example-app-name" fxLayoutAlign="center center">
             <mat-card-title
@@ -135,7 +136,7 @@
               fxLayout="row"
               fxLayoutAlign="end center"    
             >
-            <span >Fundoo</span>
+            <span >{{message}}</span>  
             </mat-card-title>
           </h3>
         </div>
@@ -275,19 +276,21 @@
       >
         <mat-nav-list>
           <mat-list role="List">
-            <div>
+            <div [routerLinkActive]="['active']"
+            [routerLink]="['note']" >
             <mat-list-item 
               role="listitem"
               id="note"
               (click)="note()"
             
+              
             >
               <img id="img1" src="../../../assets/Notes.svg" />
               Notes</mat-list-item
             ></div>
   
-            <div>
-            <mat-list-item role="listitem" (click)="reminders()" id="rem">
+            <div  >
+            <mat-list-item role="listitem" (click)="reminders()" id="rem" >
               <img id="img2" src="../../../assets/reminder.svg" />
               Reminders</mat-list-item
             ></div>
@@ -321,5 +324,8 @@
         <router-outlet> </router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
+
+   
   </div>
    
+ 
