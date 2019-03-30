@@ -11,10 +11,12 @@
 const express = require('express')
 const router = express.Router();
 const ctrl = require('../controller/userController')
+const note=require('../controller/noteController')
 const middleware = require('../middleware/authentication')
 router.post('/login', ctrl.login);
 router.post('/register', ctrl.registration);
 router.post('/forgotPassword', ctrl.forgotPassword);
 router.post('/resetPassword/:token', middleware.auth, ctrl.resetPassword);
+router.post('/note',note.note)
 
 module.exports=router;
