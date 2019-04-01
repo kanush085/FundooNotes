@@ -5,7 +5,7 @@ import{ErrorStateMatcher}from'@angular/material/core';
  import { MatSnackBar } from '@angular/material';
 // import{HttpService} from "../../service/http/http.service"
  import{UserService} from "../../service/userservice/userservices.service"
-
+//  import { JwtHelperService } from '@auth0/angular-jwt';
 import { from } from 'rxjs';
 import { error } from 'util';
 
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   
   login(){
     try {
+  
       if( this.emailFormControl.value == "" || this.password.value == "") {
        throw "Fields cannot be empty...!"
       }
@@ -48,7 +49,11 @@ export class LoginComponent implements OnInit {
 this.userService.login(model).subscribe(data =>{
   console.log(data);
   this.response=data;
-  localStorage.setItem('token',this.response.token)
+  // const helper = new JwtHelperService();
+  // const decoded= helper.decodeToken(this.response.token);
+  // console.log("----------------------------------",decoded);
+  
+  localStorage.setItem('token',this.response.token.token)
   localStorage.setItem('userid',this.response._id)
   localStorage.setItem('email',this.emailFormControl.value)
   localStorage.setItem('name',this.response.name)
