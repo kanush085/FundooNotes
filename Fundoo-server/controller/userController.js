@@ -16,6 +16,10 @@ const util = require('../util/token')
 const jwt = require('jsonwebtoken')
 const sentMail = require('../middleware/nodeMailer')
 const exp = require('express-validator')
+const express = require('express');
+const responseTime = require('response-time')
+const redis = require('redis');
+
 /***********registration****************
  * @description:To validate the user inputs using express validator and 
  *              send the request body to service controller.
@@ -76,7 +80,7 @@ exports.login = (req, res) => {
             return res.status(422).send(response);
         }
         else {
-             var obj = { email: req.body.email, password: req.body.password }
+            var obj = { email: req.body.email, password: req.body.password }
             userService.login(obj, (err, result) => {
                 if (err) {
                     return res.status(500).send({
@@ -84,15 +88,26 @@ exports.login = (req, res) => {
                     });
                 }
                 else {
-                    var token = jwt.sign({ email: req.body.email, id: result[0]._id }, secret, { expiresIn: 86400000 });
+                    response.success = true;
+                    response.result = "Token generated sucessfully!";
+                    response.success = result;
+                    const payload = {
+                        user_id: result[0]._id
+                    }
+                    console.log("payload==>", payload);
+                    const obj = util.GenerateTokenAuth(payload)
                     response.success = true;
                     response._id = result[0]._id;
-                    response.token = token;
-                    response.name= result[0].firstname;
+                    response.token = obj;
+                    response.name = result[0].firstname;
+                    console.log("result", result);
+
+
                     return res.status(200).send(response);
 
                 }
             })
+
         }
     } catch (error) {
         res.send(error)
@@ -131,7 +146,7 @@ exports.forgotPassword = (req, res) => {
                     response.success = result;
                     // console.log("data in controller========>", result[0]._id);
                     const payload = {
-                        user_id: response.result._id
+                        user_id:result._id
                     }
                     console.log("payload==>", payload);
                     const obj = util.generateToken(payload)
@@ -143,8 +158,8 @@ exports.forgotPassword = (req, res) => {
 
                     sentMail.sendEMailFunction(url)
                     res.status(200).send({
-                        msg:"success",
-                        url:url
+                        msg: "success",
+                        url: url
                     })
                 }
             })

@@ -12,14 +12,15 @@ const bodyParser = require('body-parser');
  * Configuring the database.
  */
 const app = express();
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-// var jwt = require('jsonwebtoken')
-// var bcrypt = require('bcrypt')
-// var config = require('./config/config');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+   
+   next();
+  });
+
 app.use(bodyParser.urlencoded({ extended: true }))
 /**
  * parse application/json
@@ -27,6 +28,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 var expressValidator = require('express-validator')
 app.use(expressValidator());
+var cors = require('cors')
+app.use(cors())
 app.use('/', route);
 app.get('/', (req, res) => {
     res.json({ "message": "welcome to FundooNotes application. Take notes quickly, organize and keep track of all your notes" });
@@ -40,8 +43,8 @@ const dbConfig = require('./config/config');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-var cors = require('cors')
-app.use(cors())
+
+
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {

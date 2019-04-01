@@ -1,33 +1,39 @@
-const exp = require('express-validator')
-const noteService=require('../services/noteService')
-exports.note=(req,res)=>{
-    req.checkBody('noteTitle',"Note title cannot be empty")
-    req.checkBody('noteContent',"Content cannot be empty")
-
-    var errors = req.validationErrors();
-    var response = {};
-    if (errors) {
-        response.success = false;
-        response.error = errors;
-        return res.status(422).send(response);
-    }else{
-
-        noteService.note(req.body,(err,result)=>{
-            if (err) {
-                console.log(err);
-                return res.status(500).send({
-                    message: err
-                })
-            }
-            else {
-                return res.status(200).send({
-                    message: "Note saved sucessfully"
-                });
-            }
-        })
-
+const noteService = require('../services/noteService');
+/**
+ * @description:it handles the creating note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
+exports.createNote = (req, res) => {
+    try {
+        console.log("In controller=====>",req.body);
+        
+        req.checkBody('title', 'Title should not be empty').not().isEmpty();
+        req.checkBody('description', 'Description should not be empty').not().isEmpty();
+        var errors = req.validationErrors();
+        var response = {};
+        if (errors) {
+            response.status = false;
+            response.error = errors;
+            return res.status(422).send(response);
+        } else {
+            noteService.createNote(req, (err, result) => {
+                if (err) {
+                    return res.status(500).send({
+                        message: err
+                    });
+                } else {
+                    var userNote = {
+                        note: result,
+                    }
+                    response.status = true;
+                    response.message = "Note created";
+                    response.data = userNote;
+                    res.status(200).send(response);
+                }
+            })
+        }
+    } catch (err) {
+        res.send(err);
     }
-
-
-
 }

@@ -43,3 +43,36 @@ exports.auth = (req, res, next) => {
         });
     }
 }
+
+exports.checkTokenAuth = (req, res, next) => {
+    // console.log("reuest===>", req.body);
+     // console.log("reuest===>", req.headers);
+     var token1 = req.headers['token'];
+     /**
+      * 
+      **/
+     if (token1) {
+         /**
+          * @description:verifies secret and checks expression
+          **/
+         jwt.verify(token1, 'secretkey-auth', (err, decoded) => {
+             if (err) {
+                 return res.status(401).send({
+                     status: false,
+                     message: 'Unauthorised access, please provide valid token!'
+                 });
+             } else {
+                 req.decoded = decoded;
+                 next();
+             }
+         });
+     } else {
+         /**
+          * @description:if there is no token return an error
+          **/
+         return res.send({
+             status: false,
+             message: 'No token provided!!'
+         });
+     }
+ }

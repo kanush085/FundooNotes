@@ -1,15 +1,19 @@
-
-const noteModel=require('../model/noteModel')
-exports.note = (data, callBack) => {
-    userModel.note(data, (err, result) => {
+const noteModel = require('../model/noteModel');
+/**
+ * 
+ * @param {*} data 
+ * @param {*} callback 
+ */
+exports.createNote = (data, callback) => {
+    console.log("In service=====>");
+    
+    noteModel.addNotes(data, (err, result) => {
         if (err) {
             console.log("service error");
-            return callBack(err)
-
+            return callback(err);
+        } else {
+            // console.log("In service", result);
+            return  callback(null, result);
         }
-        else {
-            console.log("In service", result);
-            return callBack(null, result);
-        }
-    })
+    });
 }
