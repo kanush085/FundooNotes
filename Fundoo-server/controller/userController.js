@@ -42,8 +42,8 @@ exports.registration = (req, res) => {
         response.error = errors;
         return res.status(422).send(response);
     } else {
-
-        userService.registration(req.body, (err, result) => {
+        var obj = { firstname: req.body.firstname, lastname: req.body.lastname,email:req.body.email,password: req.body.password }
+        userService.registration(obj, (err, result) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send({

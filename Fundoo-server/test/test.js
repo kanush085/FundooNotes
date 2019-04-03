@@ -71,6 +71,19 @@ describe('Status and content', function () {
                                                                     console.log("expect ==>", res.body);
                                                                     res.should.have.status(200);
                                                                 }
+                                                                describe('createNote', function () {
+                                                                    it('status ', function (done) {
+                                                                        chai.request(server).post('/createNote').send(data1.createNote).end((err, res) => {
+                                                                            if (err) {
+                                                                                console.log("expect ==>", err);
+                                                                            } else {
+                                                                                console.log("expect ==>", res.body);
+                                                                                res.should.have.status(200);
+                                                                            }
+                                                                            done()
+                                                                        })
+                                                                    })
+                                                                })
                                                                 done()
                                                             })
                                                         })

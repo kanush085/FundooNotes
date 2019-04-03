@@ -22,7 +22,11 @@ function noteModel() { }
  */
 noteModel.prototype.addNotes = (objectNote, callback) => {
     // console.log("data====>", objectNote.body);
-    const noteModel = new note(objectNote.body);
+    let object={
+        "title":objectNote.title,
+        "description":objectNote.description
+    }
+    const noteModel = new note(object);
     //To save the data in dbs
     noteModel.save((err, result) => {
         if (err) {

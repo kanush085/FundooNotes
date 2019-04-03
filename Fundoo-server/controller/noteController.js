@@ -17,7 +17,8 @@ exports.createNote = (req, res) => {
             response.error = errors;
             return res.status(422).send(response);
         } else {
-            noteService.createNote(req, (err, result) => {
+            var obj = { title: req.body.title, description: req.body.description }
+            noteService.createNote(obj, (err, result) => {
                 if (err) {
                     return res.status(500).send({
                         message: err

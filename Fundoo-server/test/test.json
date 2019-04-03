@@ -1,21 +1,24 @@
 {
 	"register":{
-		"firstname" : "anua",
-		"lastname" : "ggg",
-		"email" : "anush@gmail.com",
+		"firstname" : "anuua",
+		"lastname" : "gggg",
+		"email" : "anusah1@gmail.com",
 		"password" : "Ssaaa@123456"
 	},
 	"login":{
-		"email" : "anush@gmail.com",
+		"email" : "anusah1@gmail.com",
 		"password" :"Ssaaa@123456"
 	},
 	"forgotPassword":{
-		"email":"anush@gmail.com"
+		"email":"anusah1@gmail.com"
 
 	},
 	"resetPassword":{
         "password":"Ssaaa@12",
         "headers":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7fSwiaWF0IjoxNTUyMzgxNDk5LCJleHAiOjE1NTIzODg2OTl9.FT7XMPksBvtXqBuQwKoQk0RwFBewqPlCY3RkKuuSEO8"
-	}
-   
+	},
+   "createNote":{
+	   "title":"anusha",
+	   "description":"Mumbaia"
+   }
 }
