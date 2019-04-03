@@ -11,7 +11,8 @@
         // border-radius: 9px;
     border-radius: 9px;
     border: 1px solid #dadce0;
-    font-family: 'googlefonts',arial,sans-serif;    
+    font-family: 'googlefonts',arial,sans-serif;   
+    width: 600px 
   }
   .Border {
     border-color: white;
@@ -27,6 +28,30 @@
     content: attr(data-text);
   }
   
+
+// #img2{
+//     color: rgba(0 ,0 ,0,0.5)
+
+//   }
+.check{
+  opacity: 0.5;
+}
+  .check:hover{
+    opacity: 1;
+
+  }
+  .check1{
+    opacity: 0.5;
+  }
+  .check1:hover{
+    opacity: 1;
+  }
+  .insert{
+    opacity: 0.5;
+  }
+  .insert:hover{
+    opacity: 1;
+  }
   .maincard {
     width: 60%;
     color: #80868b;
@@ -43,7 +68,8 @@
   .textArea {
     background: transparent;
     font-family: 'googlefonts',arial,sans-serif;    
-    font-size: 16px  
+    font-size: 16px  ;
+    width: 420px
   }
   
   .Border :focus {
@@ -71,7 +97,7 @@
     outline: none;
     user-select: none;
     font-family: 'googlefonts',arial,sans-serif;  
-
+    width: 500px
   }
   
   .takenote {
@@ -86,4 +112,6 @@
         border: none;
         outline: none;
         user-select: none;
+        margin-top: 17%;
+        opacity: 0.7
     }

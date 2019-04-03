@@ -47,3 +47,4 @@ export class TakenoteComponent implements OnInit {
     this.flag = !this.flag;
   }
 }
+

@@ -38,6 +38,7 @@ export class DashboardComponent implements OnInit {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   signout(){
+    localStorage.clear()
     this.router.navigate(['login'])
   }
   refresh(): void {

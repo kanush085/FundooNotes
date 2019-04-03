@@ -28,6 +28,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { TakenoteComponent } from './components/takenote/takenote.component';
 import { NoteComponent } from './components/note/note.component';
+import { IconlistComponent } from './components/iconlist/iconlist.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { NoteComponent } from './components/note/note.component';
     DashboardComponent,
     TakenoteComponent,
     NoteComponent,
+    IconlistComponent,
 
 
 
@@ -65,7 +69,8 @@ import { NoteComponent } from './components/note/note.component';
     MatSelectModule,
     MatMenuModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+
    
     
   ],
