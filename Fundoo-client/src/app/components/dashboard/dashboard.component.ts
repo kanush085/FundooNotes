@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  signout(){
+  signout(){  
     localStorage.clear()
     this.router.navigate(['login'])
   }

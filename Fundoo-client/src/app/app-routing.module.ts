@@ -40,8 +40,9 @@ children:[
 {
   path:'note',
   component:NoteComponent
-
+  
 }
+
 
 ]
 }
