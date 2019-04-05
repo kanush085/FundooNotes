@@ -1,4 +1,4 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+<!-- <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()">
         <mat-icon matTooltip="Main menu">menu</mat-icon>
@@ -218,4 +218,42 @@
     </mat-sidenav-container>
   </div>
    
-  
+   -->
+
+
+
+
+
+
+
+         <!-- <div>
+      <mat-chip>
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </div>
+
+    <div fxFlex="100" *ngIf="more=='trash'" fxLayoutAlign="start center" >
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          colour="basic"
+          matTooltip="more"
+        >
+          <img id="img" src="../../../assets//image/outline-more_vert-24px.svg" />
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="deleteForever(array)">
+            Delete Forever
+          </button>
+          <button mat-menu-item (click)="restore(array)">Restore</button>
+        </mat-menu>
+      </div> -->
+
+
+
+        <!-- TO IMPORT ICONS FROM ICONLIST -->
+        <!-- <div fxFlex="100" *ngIf="more!='trash'">
+            <app-iconlist class="icon" fxFlex="50" fxFlex.xs="90" [card]="array" [more]="archived"
+                (archivedCard)="archive($event)" (unarchiveCard)="unarchived($event)" (deletecard)="archive(array)"
+                [type]=type></app-iconlist>
+        </div> -->

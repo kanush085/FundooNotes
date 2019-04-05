@@ -52,5 +52,21 @@ export class HttpService {
     return this.http.post(this.apiBaseurl+url, body, httpOptions)
   }
 
+ 
+getHttp(url:string){
+  // console.log("-------------",url);
+  
+  const httpOptions={
+    headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'token': localStorage.getItem('token')
+    })
+  }
+  // console.log("*****",this.apiBaseurl+url);
+  
+  return this.http.get(this.apiBaseurl+url,httpOptions)
+  
+}
+
 
 }

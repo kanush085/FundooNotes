@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-displaynote',
@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-
+  @Input() cards;
   constructor() { }
-
+  
+  
   ngOnInit() {
   }
-array:any={
-  title:"hiiiii"
-}
+// array:any={
+//   title:"hiiiii"
+// }
+
+
 
 }

@@ -1,79 +1,28 @@
-<!-- <div>
-    <mat-card class="matcard">
 
 
+<!-- =============================================================== -->
 
-        <div fxLayout="row" fxLayoutAlign="start center">
-            <div fxLayout="row" fxLayoutAlign="start center" (click)="openDialog()">
+<div *ngFor='let array of cards' fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="row">
 
-                <div fxLayout="column">
-                    <div class="title">
-                        {{2+3}}
-                    </div>
-
-                    <div class="discp" contenteditable="true">
-                    {{array.title}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </mat-card>
-</div> -->
-
-
-
-
-
-
-
-<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="row">
-
-    <mat-card fxFlex.xs="100" fxLayout="column" class="matcard2"  >
+    <mat-card  fxFlex.xs="100" fxLayout="column"class="matcard1" fxFlex="45"
+        fxFlexOffset.xl="10">
         <div fxFlex="55" fxFlexOffset.xl="20" fxFlex.xs="97" fxLayout="row" fxLayoutAlign="start center">
             <div fxFlex="90" fxFlexOffset.xl="20" fxFlex.xs="97" fxLayout="row" fxLayoutAlign="start center"
                 (click)="openDialog()">
 
                 <div fxLayout="column">
                     <div class="title">
-                        {{1+2}}
+                        {{array.title}}
                     </div>
 
                     <div class="discp" contenteditable="true">
-                        {{2+3}}
+                        {{array.description}}
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div>
-      <mat-chip>
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-      </mat-chip>
-    </div> -->
-        <!-- 
-    <div fxFlex="100" *ngIf="more=='trash'" fxLayoutAlign="start center" >
-        <button
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          colour="basic"
-          matTooltip="more"
-        >
-          <img id="img" src="../../../assets//image/outline-more_vert-24px.svg" />
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="deleteForever(array)">
-            Delete Forever
-          </button>
-          <button mat-menu-item (click)="restore(array)">Restore</button>
-        </mat-menu>
-      </div>
-     -->
-
-
-        <!-- TO IMPORT ICONS FROM ICONLIST -->
-        <!-- <div fxFlex="100" *ngIf="more!='trash'">
-        <app-iconlist class="icon" fxFlex="50" fxFlex.xs="90" [card]="array" [more]="archived" (archivedCard)="archive($event)" (unarchiveCard)="unarchived($event)" (deletecard)="archive(array)" [type]=type></app-iconlist>
-      </div> -->
-      <app-iconlist></app-iconlist>
+  <!-- --------------------- -->
+        <app-iconlist></app-iconlist>
     </mat-card>
 
 </div>
