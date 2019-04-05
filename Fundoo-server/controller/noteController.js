@@ -42,7 +42,8 @@ exports.createNote = (req, res) => {
 
 exports.getNotes = (req, res) => {
     // console.log("============================"+req.body);
-
+        console.log("coming from frontend");
+        
     try {
         var response = {}
         // console.log("in ctrl===========>",req);
