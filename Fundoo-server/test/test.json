@@ -1,24 +1,32 @@
 {
-	"register":{
-		"firstname" : "anuua",
-		"lastname" : "gggg",
-		"email" : "anusah1@gmail.com",
-		"password" : "Ssaaa@123456"
+	"register": {
+		"firstname": "anuuua",
+		"lastname": "ggggg",
+		"email": "anusah12345678@gmail.com",
+		"password": "Ssaaaa@123456"
 	},
-	"login":{
-		"email" : "anusah1@gmail.com",
-		"password" :"Ssaaa@123456"
+	"login": {
+		"email": "anusah12345678@gmail.com",
+		"password": "Ssaaaa@123456"
 	},
-	"forgotPassword":{
-		"email":"anusah1@gmail.com"
-
+	"forgotPassword": {
+		"email": "anusah12345678@gmail.com"
 	},
-	"resetPassword":{
-        "password":"Ssaaa@12",
-        "headers":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7fSwiaWF0IjoxNTUyMzgxNDk5LCJleHAiOjE1NTIzODg2OTl9.FT7XMPksBvtXqBuQwKoQk0RwFBewqPlCY3RkKuuSEO8"
+	"resetPassword": {
+		"password": "Ssaaaa@12",
+		"headers": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7fSwiaWF0IjoxNTUyMzgxNDk5LCJleHAiOjE1NTIzODg2OTl9.FT7XMPksBvtXqBuQwKoQk0RwFBewqPlCY3RkKuuSEO8"
 	},
-   "createNote":{
-	   "title":"anusha",
-	   "description":"Mumbaia"
-   }
+	"createNote": {
+		"title": "anusha",
+		"description": "Mumbaia"
+	},
+	"isArchived": {
+		"noteID": "5cac4d05eab19a0a215e657e"
+	},
+	"getNotes": {
+		"userId":"5c88f838c3761240119f677c"
+	},
+	"isTrashed":{
+		"noteID": "5cac4d05eab19a0a215e657e"
+	}
 }

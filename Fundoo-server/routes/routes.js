@@ -19,4 +19,7 @@ router.post('/forgotPassword', ctrl.forgotPassword);
 router.post('/resetPassword/:token', middleware.auth, ctrl.resetPassword);
 router.post('/createNote', middleware.checkTokenAuth, noteController.createNote)
 router.get('/getNotes', middleware.checkTokenAuth, noteController.getNotes)
+router.put('/isArchived', middleware.checkTokenAuth, noteController.isArchived);
+router.put('/isTrashed', middleware.checkTokenAuth, noteController.isTrashed)
+router.post('/deleteNote',middleware.checkTokenAuth,noteController.deletNote)
 module.exports = router;

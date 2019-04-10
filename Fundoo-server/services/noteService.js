@@ -32,3 +32,41 @@ exports.getNotes = (data, callback) => {
         }
     })
 }
+
+
+exports.isArchived = (paramID, paramData, callback) => {
+    console.log("in services", paramID, paramData);
+    noteModel.isArchived(paramID, paramData, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+}
+
+
+exports.isTrashed = (paramID, paramData, callback) => {
+    console.log("in services", paramID, paramData);
+    noteModel.isTrashed(paramID, paramData, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+}
+
+
+exports.deleteNote=(noteID,callback)=>{
+    console.log("came to delete note service");
+    noteModel.deleteNote(noteID,(err,result)=>{
+        if(err)
+        {
+            callback(err);
+        }else{
+            return callback(null,result)
+        }
+    })
+    
+}

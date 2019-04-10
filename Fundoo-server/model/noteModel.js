@@ -6,7 +6,7 @@ var noteSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         required: [true, "User_id required"],
         // ref: 'Note'
-    }, 
+    },
     title: {
         type: String,
         required: [true, "Title required"]
@@ -50,7 +50,7 @@ noteModel.prototype.addNotes = (objectNote, callback) => {
     //     "description":objectNote.description
     // }
     const noteModel = new note(objectNote.body);
-     console.log("data==================>", objectNote.body);
+    console.log("data==================>", objectNote.body);
     //To save the data in dbs
     noteModel.save((err, result) => {
         if (err) {
@@ -73,16 +73,70 @@ noteModel.prototype.addNotes = (objectNote, callback) => {
 noteModel.prototype.getNotes = (id, callback) => {
     // console.log("---------------------",id.decoded.payload.user_id);
     // console.log(id);
-    
-    note.find({
-        userId:id.decoded.payload.user_id
 
-    },(err, result) => {
-        
+    note.find({
+        userId: id.decoded.payload.user_id
+
+    }, (err, result) => {
+
         if (err) {
             callback(err)
         } else {
             callback(null, result)
+        }
+    })
+}
+noteModel.prototype.isArchived = (noteID, archiveNote, callback) => {
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                archive: archiveNote,
+                trash: false,
+                pinned: false
+            }
+        },
+        (err, result) => {
+            if (err) {
+                callback(err)
+            } else {
+
+                return callback(null, archiveNote)
+            }
+        });
+};
+
+
+noteModel.prototype.isTrashed = (noteID, trashNote, callback) => {
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                trash: trashNote
+            }
+        },
+        (err, result) => {
+            if (err) {
+
+                callback(err)
+            } else {
+                return callback(null, trashNote)
+            }
+        });
+};
+
+noteModel.prototype.deleteNote = (noteID, callback) => {
+    console.log("came to model");
+    note.findOneAndDelete({ _id: noteID }, (err, result) => {    
+        if (err) {
+            callback(err)
+        } else {
+            const body={
+                status:true,
+                msg:"note deleted successfully"
+                
+            }
+            return callback(null,body)   
         }
     })
 }

@@ -80,6 +80,46 @@ describe('Status and content', function () {
                                                                                 console.log("expect ==>", res.body);
                                                                                 res.should.have.status(200);
                                                                             }
+                                                                            describe('isArchived', function () {
+                                                                                it('status ', function (done) {
+                                                                                    chai.request(server).put('/isArchived').send(data1.isArchived).end((err, res) => {
+                                                                                        if (err) {
+                                                                                            console.log("expect ==>", err);
+                                                                                        } else {
+                                                                                            console.log("expect ==>", res.body);
+                                                                                            res.should.have.status(200);
+                                                                                        }
+                                                                                        describe('getNotes', function () {
+                                                                                            it('status ', function (done) {
+                                                                                                chai.request(server).get('/getNotes').send(data1.getNotes).end((err, res) => {
+                                                                                                    if (err) {
+                                                                                                        console.log("expect ==>", err);
+                                                                                                    } else {
+                                                                                                        console.log("expect ==>", res.body);
+                                                                                                        res.should.have.status(200);
+                                                                                                    }
+                                                                                                    describe('isTrashed', function () {
+                                                                                                        it('status ', function (done) {
+                                                                                                            chai.request(server).put('/isTrashed').send(data1.isTrashed).end((err, res) => {
+                                                                                                                if (err) {
+                                                                                                                    console.log("expect ==>", err);
+                                                                                                                } else {
+                                                                                                                    console.log("expect ==>", res.body);
+                                                                                                                    res.should.have.status(200);
+                                                                                                                }
+            
+                                                                                                                done()
+                                                                                                            })
+                                                                                                        })
+                                                                                                    })
+                                                                                                    done()
+                                                                                                })
+                                                                                            })
+                                                                                        })
+                                                                                        done()
+                                                                                    })
+                                                                                })
+                                                                            })
                                                                             done()
                                                                         })
                                                                     })
