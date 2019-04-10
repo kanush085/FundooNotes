@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MediaMatcher } from "@angular/cdk/layout";
 import { MatDialog, } from "@angular/material";
 import { Router } from "@angular/router";
@@ -7,7 +7,8 @@ import { ChangeDetectorRef, OnDestroy } from "@angular/core";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  encapsulation:ViewEncapsulation.None
 })
 
 export class DashboardComponent implements OnInit {
@@ -46,7 +47,7 @@ export class DashboardComponent implements OnInit {
     
 }
 note(){
-  this.message="Fundoo"
+  this.message="Notes"
  
 }
 
@@ -56,9 +57,11 @@ reminders(){
 
 trashBox(){
   this.message="Trash"
+  this.router.navigate(['dashboard/trash'])
 }
 archive(){
   this.message="Archive"
+  this.router.navigate(['dashboard/archive'])
 }
 
 }

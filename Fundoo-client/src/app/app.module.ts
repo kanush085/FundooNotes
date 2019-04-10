@@ -30,6 +30,8 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
 import { NoteComponent } from './components/note/note.component';
 import { IconlistComponent } from './components/iconlist/iconlist.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 
@@ -45,6 +47,8 @@ import { DisplaynoteComponent } from './components/displaynote/displaynote.compo
     NoteComponent,
     IconlistComponent,
     DisplaynoteComponent,
+    ArchiveComponent,
+    TrashComponent,
 
 
 

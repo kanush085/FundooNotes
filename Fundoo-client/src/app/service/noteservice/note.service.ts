@@ -12,4 +12,19 @@ export class NoteService {
   getNote() {
     return this.http.getHttp("getNotes");
   }
+
+
+  archiveNote(data)
+  {
+    return this.http.put('isArchived',data)
+  }
+
+  trashNote(data){
+    return this.http.put('isTrashed',data)
+  }
+
+  deleteNote(data){
+    return this.http.postJSON('deleteNote',data)
+  }
+
 }

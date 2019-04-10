@@ -7,6 +7,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NoteComponent } from './components/note/note.component';
 import { AuthGuard } from '../app/service/auth/auth.guard';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 const routes: Routes = [{
   path:'',
@@ -41,9 +43,15 @@ children:[
   path:'note',
   component:NoteComponent
   
+},
+{
+  path : 'archive',
+  component: ArchiveComponent
+},
+{
+  path : 'trash',
+  component: TrashComponent
 }
-
-
 ]
 }
 ];

@@ -125,25 +125,25 @@
 
 
 
-.card{
-  height: 15%;
-}
-.mat-card mat-card-title{
-  font-size: 5mm;
-  font-family: 'Times New Roman';
+// .card{
+//   height: 15%;
+// }
+// .mat-card mat-card-title{
+//   font-size: 5mm;
+//   font-family: 'Times New Roman';
   
-}
-.matcard1{
-  border-radius: 10px;
-  background-color: forestgreen;
-  // border-radius: 2%;
-  margin-top: 2%;
-  margin-bottom: 1%;
-  min-width: 260px;
-  margin-left: auto;
-  margin-right: auto;
+// }
+// .matcard1{
+//   border-radius: 10px;
+//   background-color: forestgreen;
+//   // border-radius: 2%;
+//   margin-top: 10px;
+//   margin-bottom: 5px;
+//   min-width: 260px;
+//   margin-left: auto;
+//   margin-right: auto;
   
-}
+// }
 // .pin{
 //     opacity: 0;
 //     &:hover{
@@ -158,17 +158,128 @@
     
 //     }
 // }
-.title{
-  font-family: 'Times New Roman';
-  font-weight: bold;
-  padding: 10px 10px 10px 0px;
+// .title{
+//   font-family: 'Times New Roman';
+//   font-weight: bold;
+//   padding: 10px 10px 10px 0px;
+// }
+// .discp{
+//   font-family: sans-serif
+// }
+// .icon{
+//   opacity: 0;
+// &:hover{
+// opacity: 1.4;
+// }
+// }
+
+// /////////////////////////////////////////////////////////////////////
+
+
+
+@font-face {
+  font-family: googlefonts;
+  src: url("../../fonts/GoogleSans-Regular.ttf");
 }
-.discp{
-  font-family: sans-serif
+
+.card{
+  height: 15%;
 }
+.mat-card mat-card-title{
+  font-size: 5mm;
+  font-family: 'googlefonts',arial,sans-serif;
+  
+}
+#img{
+  width: 18px;
+  height: 18px;
+}
+
+// #pin{
+//   opacity: 0;
+//   &:hover{
+//   opacity: 1;
+//   }
+
+//   .btn{
+//       opacity:0.2;
+//       &:hover{
+//         opacity: 1.5;
+//       }
+    
+//   }
+// }
+// .title{
+//   font-family: 'googlefonts',arial,sans-serif;
+//   font-weight: bold;
+//   padding-bottom: 4px
+// }
+// .discp{
+//   font-family: 'googlefonts',arial,sans-serif;
+//   word-break: break-all;
+//   padding-bottom: 4px;
+//   max-width: 240px;
+// }
 .icon{
+
   opacity: 0;
 &:hover{
 opacity: 1.4;
 }
+}
+
+.barpin {
+  border: none;
+  outline: none;
+  user-select: none;
+  margin-top: 6px
+}
+.cardcontent{
+padding: 5px
+}
+
+
+.gridView{
+  .matcard{
+    background-color: lightcoral;
+     border-radius: 10px;
+     margin-top: 5%;
+     min-width: 260px;
+   
+     margin-left: auto;
+     margin-right: auto
+   }
+  .title{
+    font-family: 'googlefonts',arial,sans-serif;
+    font-weight: bold;
+    padding-bottom: 4px
+  }
+  .discp{
+    font-family: 'googlefonts',arial,sans-serif;
+    word-break: break-all;
+    padding-bottom: 4px;
+    max-width: 240px;
+  }
+}
+.listView{
+  .matcard{
+    background-color: lightcoral;
+     border-radius: 10px;
+     margin-top: 5%;
+     min-width: 50%;
+   
+     margin-left: auto;
+     margin-right: auto
+   }
+  .title{
+    font-family: 'googlefonts',arial,sans-serif;
+    font-weight: bold;
+    padding-bottom: 4px
+  }
+  .discp{
+    font-family: 'googlefonts',arial,sans-serif;
+    word-break: break-all;
+    padding-bottom: 4px;
+    max-width: 100%;
+  }
 }

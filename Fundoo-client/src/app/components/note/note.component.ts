@@ -14,7 +14,7 @@ export class NoteComponent implements OnInit {
   ngOnInit() {
     this.getCards()
   }
-grid='column'
+grid='row wrap'
 
   getCards() {
     this.noteService.getNote().subscribe(data => {
@@ -22,7 +22,9 @@ grid='column'
       var carddata = data['data']
       this.cards=[];
       for (let i = 0; i < carddata.length; i++) {
+        if(!carddata[i].archive && !carddata[i].trash)     
      this.cards.push(carddata[i])
+  
       }
       console.log("array cards",this.cards);
       
@@ -31,9 +33,9 @@ grid='column'
   }
 
   recieveMessage($event) {
-    this.addnote = $event;
-    console.log(this.addnote, "......addnote")
-    this.Allcards.push(this.addnote);
+    // this.addnote = $event;
+    // console.log(this.addnote, "......addnote")
+    // this.Allcards.push(this.addnote);
     this.ngOnInit();
   }
 

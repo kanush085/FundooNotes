@@ -10,6 +10,7 @@ import { EventEmitter } from "@angular/core";
   styleUrls: ['./takenote.component.scss']
 })
 export class TakenoteComponent implements OnInit {
+  isArchive:boolean=false
   flag = true;
   reqbody: any
   bgcolor: any = "#FFFFFF";
@@ -19,7 +20,7 @@ export class TakenoteComponent implements OnInit {
 
   ngOnInit() {
   }
-    @Output() addingNote=new EventEmitter()
+  @Output() addingNote=new EventEmitter()
   noteTitle = new FormControl("", [Validators.required, Validators.required]);
   noteContent = new FormControl("", [Validators.required, Validators.required]);
   addNote() {
@@ -34,7 +35,7 @@ export class TakenoteComponent implements OnInit {
         description: this.noteContent.value,
         reminder: "",
         pinned: false,
-        archive: false,
+        archive: this.isArchive,
         color: this.bgcolor,
         trash: false,
         image: ""
@@ -52,7 +53,11 @@ export class TakenoteComponent implements OnInit {
     }
 
   }
-
+  archive($event)
+  {
+    this.isArchive=$event
+    this.addNote()
+  }
   reverseFlag() {
     this.flag = !this.flag;
   }

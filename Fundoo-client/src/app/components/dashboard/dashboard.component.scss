@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: googlefonts;
+  src: url("../../fonts/GoogleSans-Regular.ttf");
+}
 .toolbar{
   display: flex;
   justify-content: space-between;
@@ -124,12 +127,15 @@
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
   background-color: white;
+  font-family: 'googlefonts',arial,sans-serif;
+
 }
 
 .example-is-mobile .example-sidenav-container {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+  font-family: 'googlefonts',arial,sans-serif;
 }
 .example-header-image {
   background-image: url("../../../assets/PhotoGrid_1393513408061[1].jpg");
@@ -139,18 +145,21 @@
   border-radius: 50%;
   margin-left: -2%;
 }
-.menu-button {
-  width: 20%;
-}
+// .menu-button {
+//   width: 20%;
+// }
 
 .menu-button {
   display: flex;
   justify-content: space-between;
   padding: 25px 45px;
+  max-width: 800px !important;
 }
 .profileMenu {
-  min-width: 200px;
+  min-width: 230px;
   max-width: 250px;
+
+  margin: -86px 0px -21px 21px;
 }
 .sidenav {
   border-color: white;
@@ -215,7 +224,7 @@ mat-sidenav {
   color: #5f6368;
   cursor: default;
   letter-spacing: .07272727em;
-  font-family: Roboto,Arial,sans-serif;
+  font-family: 'googlefonts',arial,sans-serif;
   font-size: .6875rem;
   font-weight: 500;
   line-height: 1rem;
@@ -223,18 +232,20 @@ mat-sidenav {
 }
 .fundoo{
   display: inline-block;
-  font-family: 'Product Sans',Arial,sans-serif;
+  font-family: 'googlefonts',arial,sans-serif;
   font-size: 22px;
+  color: #5f6368;
   line-height: 24px;
   padding-left: 8px;
   position: relative;
-  top: 1.5px;
+  top: 4.5px;
   vertical-align: middle;
-  color: grey
+
 }
 .active{
   background-color: #feefc3;
   border-radius: 0 25px 25px 0;
+  
 }
 
 
@@ -259,9 +270,9 @@ mat-sidenav {
 //   margin-left: 40%;
 // }
 
-.matMenu {
-  width: 10px;
-}
+// .matMenu {
+//   width: 50px;
+// }
 
 // .mat-raised-button:not([class*="mat-elevation-z"]) {
 //   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
@@ -310,3 +321,8 @@ mat-sidenav {
     position: absolute;
  
   }
+
+  .mat-list-base .mat-list-item {
+    font-size: 0.9rem;
+    font-weight: 500
+}
