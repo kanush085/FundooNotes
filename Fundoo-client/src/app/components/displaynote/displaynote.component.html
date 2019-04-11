@@ -32,7 +32,7 @@
 
 <div [ngClass]="grid"  *ngFor='let array of cards' fxLayoutAlign="center center" fxLayout.xs="row">
 
-    <mat-card fxFlex.xs="100" fxLayout="column" class="matcard" fxFlex="45" fxFlexOffset.xl="10" >
+    <mat-card fxFlex.xs="100" fxLayout="column" class="matcard" fxFlex="45" fxFlexOffset.xl="10" [style.backgroundColor]="array.color">
         <div fxFlex="55" fxFlexOffset.xl="20" fxFlex.xs="97" fxLayout="row" fxLayoutAlign="start center">
             <div fxFlex="90" fxFlexOffset.xl="20" fxFlex.xs="97" fxLayout="row" fxLayoutAlign="start center"
                 (click)="openDialog()">

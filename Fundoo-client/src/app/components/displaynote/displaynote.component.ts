@@ -53,4 +53,10 @@ export class DisplaynoteComponent implements OnInit {
     let ind = this.cards.indexOf($event)
     this.cards.splice(ind, 1)
   }
+
+
+
+  color($event){
+    
+  }
 }

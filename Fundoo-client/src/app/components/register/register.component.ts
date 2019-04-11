@@ -47,9 +47,7 @@ message='';
        this.message = "Password did not match..!"
       console.log(this.message)
     }
-    else{
-      console.log("////////////////////////");
-      
+    else{ 
     this.userService.register(model).subscribe(data=>{
       console.log("----In subscribe----",data);
       this.snackBar.open("Registration Successfull....!","ok",{duration:5000});

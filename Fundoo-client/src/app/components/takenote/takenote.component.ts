@@ -10,7 +10,7 @@ import { EventEmitter } from "@angular/core";
   styleUrls: ['./takenote.component.scss']
 })
 export class TakenoteComponent implements OnInit {
-  isArchive:boolean=false
+  isArchive: boolean = false
   flag = true;
   reqbody: any
   bgcolor: any = "#FFFFFF";
@@ -20,12 +20,16 @@ export class TakenoteComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Output() addingNote=new EventEmitter()
+  @Output() addingNote = new EventEmitter()
   noteTitle = new FormControl("", [Validators.required, Validators.required]);
   noteContent = new FormControl("", [Validators.required, Validators.required]);
+
+
+
   addNote() {
     this.flag = !this.flag;
     if ((this.noteTitle.value == null || this.noteTitle.value == '') && (this.noteContent.value == null || this.noteContent.value == '')) {
+      this.bgcolor="#FFFFFF"
       return
     }
     else {
@@ -43,23 +47,25 @@ export class TakenoteComponent implements OnInit {
       };
       this.httpService.postJSON("createNote", this.reqbody).subscribe(data => {
         console.log(data);
-         this.addingNote.emit(data['message'])
+        this.addingNote.emit(data['message'])
         this.noteTitle.reset()
         this.noteContent.reset()
+        this.bgcolor="#FFFFFF"
       }),
         err => {
           console.log(err);
         };
     }
-
   }
-  archive($event)
-  {
-    this.isArchive=$event
+  archive($event) {
+    this.isArchive = $event
     this.addNote()
   }
   reverseFlag() {
     this.flag = !this.flag;
+  }
+  changeColor($event) {
+    this.bgcolor = $event
   }
 }
 

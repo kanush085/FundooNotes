@@ -57,11 +57,11 @@ reminders(){
 
 trashBox(){
   this.message="Trash"
-  this.router.navigate(['dashboard/trash'])
+  // this.router.navigate(['dashboard/trash'])
 }
 archive(){
   this.message="Archive"
-  this.router.navigate(['dashboard/archive'])
+  // this.router.navigate(['dashboard/archive'])
 }
 
 }

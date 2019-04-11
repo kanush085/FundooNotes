@@ -18,7 +18,7 @@ grid='row wrap'
 
   getCards() {
     this.noteService.getNote().subscribe(data => {
-      console.log("------------", data);
+      console.log("getcards", data);
       var carddata = data['data']
       this.cards=[];
       for (let i = 0; i < carddata.length; i++) {
