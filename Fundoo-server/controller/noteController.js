@@ -136,7 +136,7 @@ exports.isTrashed = (req, res) => {
     }
 }
 
-exports.deletNote = (req, res) => {
+exports.deleteNote = (req, res) => {
     try {
         console.log("*****came to ctrl**")
         req.checkBody("noteID", "noteID is required").not().isEmpty();
@@ -148,7 +148,7 @@ exports.deletNote = (req, res) => {
             return res.status(422).send(response)
         } else {
             var responseResult = {};
-            noteID = req.body.noteID;     
+            noteID = req.body.noteID;
             noteService.deleteNote(noteID, (err, result) => {
                 if (err) {
                     responseResult.status = false;
@@ -165,3 +165,37 @@ exports.deletNote = (req, res) => {
         res.send(error)
     }
 }
+
+exports.updateColor = (req, res) => {
+    try {
+        req.checkBody("noteID", "noteID is required").not().isEmpty();
+        req.checkBody("color", "color is required").not().isEmpty();
+        var errors = req.validationErrors();
+        var response = {};
+        if (errors) {
+            response.status = false;
+            response.error = errors;
+            return res.status(422).send(response)
+        } else {
+            var responseResult = {}
+            var noteID = req.body.noteID;
+            var color = req.body.color;
+            noteService.updateColor(noteID, color, (err, result) => {
+                if (err) {
+                    responseResult.status = false;
+                    responseResult.error = err;
+                    res.status(500).send(responseResult)
+                } else {
+                    responseResult.status = true;
+                    responseResult.data = result;
+                    res.status(200).send(responseResult)
+                }
+            })
+        }
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
+

@@ -21,5 +21,6 @@ router.post('/createNote', middleware.checkTokenAuth, noteController.createNote)
 router.get('/getNotes', middleware.checkTokenAuth, noteController.getNotes)
 router.put('/isArchived', middleware.checkTokenAuth, noteController.isArchived);
 router.put('/isTrashed', middleware.checkTokenAuth, noteController.isTrashed)
-router.post('/deleteNote',middleware.checkTokenAuth,noteController.deletNote)
+router.post('/deleteNote',middleware.checkTokenAuth,noteController.deleteNote)
+router.put('/updateColor',middleware.checkTokenAuth,noteController.updateColor)
 module.exports = router;

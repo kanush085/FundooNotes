@@ -58,15 +58,27 @@ exports.isTrashed = (paramID, paramData, callback) => {
 }
 
 
-exports.deleteNote=(noteID,callback)=>{
+exports.deleteNote = (noteID, callback) => {
     console.log("came to delete note service");
-    noteModel.deleteNote(noteID,(err,result)=>{
-        if(err)
-        {
+    noteModel.deleteNote(noteID, (err, result) => {
+        if (err) {
             callback(err);
-        }else{
-            return callback(null,result)
+        } else {
+            return callback(null, result)
         }
     })
-    
+
+}
+
+
+exports.updateColor = (noteID, color, callback) => {
+    console.log("came to updateColor note service");
+    noteModel.updateColor(noteID, color, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+
 }

@@ -106,8 +106,33 @@ describe('Status and content', function () {
                                                                                                                 } else {
                                                                                                                     console.log("expect ==>", res.body);
                                                                                                                     res.should.have.status(200);
-                                                                                                                }
+                                                                                                                } describe('deleteNote', function () {
+                                                                                                                    it('status ', function (done) {
+                                                                                                                        chai.request(server).post('/deleteNote').send(data1.deleteNote).end((err, res) => {
+                                                                                                                            if (err) {
+                                                                                                                                console.log("expect ==>", err);
+                                                                                                                            } else {
+                                                                                                                                console.log("expect ==>", res.body);
+                                                                                                                                res.should.have.status(200);
+                                                                                                                            }
+                                                                                                                            describe('updateColor', function () {
+                                                                                                                                it('status ', function (done) {
+                                                                                                                                    chai.request(server).put('/updateColor').send(data1.updateColor).end((err, res) => {
+                                                                                                                                        if (err) {
+                                                                                                                                            console.log("expect ==>", err);
+                                                                                                                                        } else {
+                                                                                                                                            console.log("expect ==>", res.body);
+                                                                                                                                            res.should.have.status(200);
+                                                                                                                                        }
             
+                                                                                                                                        done()
+                                                                                                                                    })
+                                                                                                                                })
+                                                                                                                            })
+                                                                                                                            done()
+                                                                                                                        })
+                                                                                                                    })
+                                                                                                                })
                                                                                                                 done()
                                                                                                             })
                                                                                                         })

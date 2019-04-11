@@ -63,8 +63,6 @@ noteModel.prototype.addNotes = (objectNote, callback) => {
     })
 }
 
-
-
 /**
  * @description:it will get the notes using userId and find the notes with data
  * @param {*request from frontend} id 
@@ -86,6 +84,12 @@ noteModel.prototype.getNotes = (id, callback) => {
         }
     })
 }
+/**
+ * 
+ * @param {*} noteID 
+ * @param {*} archiveNote 
+ * @param {*} callback 
+ */
 noteModel.prototype.isArchived = (noteID, archiveNote, callback) => {
     note.findOneAndUpdate({
         _id: noteID
@@ -105,7 +109,12 @@ noteModel.prototype.isArchived = (noteID, archiveNote, callback) => {
             }
         });
 };
-
+/**
+ * 
+ * @param {*} noteID 
+ * @param {*} trashNote 
+ * @param {*} callback 
+ */
 
 noteModel.prototype.isTrashed = (noteID, trashNote, callback) => {
     note.findOneAndUpdate({
@@ -124,20 +133,51 @@ noteModel.prototype.isTrashed = (noteID, trashNote, callback) => {
             }
         });
 };
-
+/**
+ * @description:
+ * @param {*} noteID 
+ * @param {*} callback 
+ */
 noteModel.prototype.deleteNote = (noteID, callback) => {
     console.log("came to model");
-    note.findOneAndDelete({ _id: noteID }, (err, result) => {    
+    note.deleteOne({ _id: noteID }, (err, result) => {
         if (err) {
             callback(err)
         } else {
-            const body={
-                status:true,
-                msg:"note deleted successfully"
-                
+            const body = {
+                status: true,
+                msg: "note deleted successfully"
+
             }
-            return callback(null,body)   
+            return callback(null, body)
         }
     })
 }
+/**
+ * @description:
+ * @param {*} noteID 
+ * @param {*} color 
+ * @param {*} callback 
+ */
+
+noteModel.prototype.updateColor = (noteID, color, callback) => {
+    console.log("came to updatecolor model");
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                color: color
+            }
+        }, (err, result) => {
+            if (err) {
+
+                callback(err)
+            } else {
+                return callback(null, color)
+            }
+        })
+}
+
+
+
 module.exports = new noteModel();
