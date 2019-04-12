@@ -32,6 +32,7 @@ import { IconlistComponent } from './components/iconlist/iconlist.component';
 import { DisplaynoteComponent } from './components/displaynote/displaynote.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 
 
@@ -49,6 +50,7 @@ import { TrashComponent } from './components/trash/trash.component';
     DisplaynoteComponent,
     ArchiveComponent,
     TrashComponent,
+    UpdatenoteComponent,
 
 
 
