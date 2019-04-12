@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from "../../service/noteservice/note.service"
+import{DataService} from "../../service/dataservice/data.service"
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
@@ -7,14 +8,24 @@ import { NoteService } from "../../service/noteservice/note.service"
 })
 export class NoteComponent implements OnInit {
 
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService,private data: DataService) { }
   cards: any[]=[]
   Allcards: any[]=[]
   addnote: any
+  message:string;
+  grid=''
   ngOnInit() {
     this.getCards()
+    this.data.currentMessage.subscribe(message=>{
+      console.log(message);
+   if(message){
+    this.grid='row wrap'
+
+   }else{
+     this.grid='column'
+   }
+    })
   }
-grid='row wrap'
 
   getCards() {
     this.noteService.getNote().subscribe(data => {

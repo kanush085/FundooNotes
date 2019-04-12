@@ -4,6 +4,7 @@ import { MatDialog, } from "@angular/material";
 import { Router } from "@angular/router";
 import { MatSnackBar } from "@angular/material";
 import { ChangeDetectorRef, OnDestroy } from "@angular/core";
+import{DataService} from "../../service/dataservice/data.service"
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -18,12 +19,13 @@ export class DashboardComponent implements OnInit {
   labelList: any;
   email: string;
   username:string;
+  grid=false;
   flag:boolean = true;
   private _mobileQueryListener: () => void;
   constructor(media: MediaMatcher,
     private router: Router,
     public dialog: MatDialog,
-    private snackBar: MatSnackBar, changeDetectorRef: ChangeDetectorRef, ) {
+    private snackBar: MatSnackBar, changeDetectorRef: ChangeDetectorRef,private service:DataService) {
     this.mobileQuery = media.matchMedia("(max-width: 600px)");
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -33,8 +35,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
-
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
@@ -48,7 +50,6 @@ export class DashboardComponent implements OnInit {
 }
 note(){
   this.message="Notes"
- 
 }
 
 reminders(){
@@ -62,6 +63,10 @@ trashBox(){
 archive(){
   this.message="Archive"
   // this.router.navigate(['dashboard/archive'])
+}
+gridChange(){
+this.grid=!this.grid;
+this.service.changeMessage(this.grid);
 }
 
 }

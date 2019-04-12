@@ -10,7 +10,7 @@ export class NoteService {
 
 
   getNote() {
-    return this.http.getHttp("getNotes");
+    return this.http.getHttp('getNotes');
   }
   archiveNote(data) {
     return this.http.put('isArchived', data)

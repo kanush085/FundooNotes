@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from "../../service/noteservice/note.service"
+import{DataService} from "../../service/dataservice/data.service"
 export interface DialogData {
   array: [];
 }
@@ -14,13 +15,20 @@ export class DisplaynoteComponent implements OnInit {
   @Input() archived
   @Input() more: string;
   @Input() trash
-  view = false;
+  message:string;
+  view;
   grid = {
     listView: this.view,
     gridView: !this.view
   }
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService,private data: DataService) { }
   ngOnInit() {
+    this.data.currentMessage.subscribe(message=>{
+      console.log('message from service ',message);
+      this.view=message;
+      this.grid.listView=!this.view;
+      this.grid.gridView=this.view; 
+    })
   }
 
   archive(array) {

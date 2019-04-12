@@ -146,8 +146,8 @@
 
       <button mat-icon-button color="basic" id="grid" fxHide.xs matTooltip="Grid view">
         <mat-icon>
-          <img isClicked src="../../../assets/listView.svg" />
-          <img isClicked *ngIf="isClicked == true" src="../../../assets/image/outline-border_all-24px.svg" /></mat-icon>
+          <img *ngIf="grid" (click)="gridChange(grid)" src="../../../assets/listView.svg" />
+          <img *ngIf="!grid" (click)="gridChange(grid)" src="../../../assets/gridView.svg" /></mat-icon>
       </button>
 
 
