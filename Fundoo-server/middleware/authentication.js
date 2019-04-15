@@ -47,6 +47,8 @@ exports.auth = (req, res, next) => {
 exports.checkTokenAuth = (req, res, next) => {
     // console.log("reuest===>", req.body);
      // console.log("reuest===>", req.headers);\
+    //  console.log("////////////////////////");
+     
      
      var token1 = req.headers['token'];
      /**

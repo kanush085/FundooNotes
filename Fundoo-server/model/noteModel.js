@@ -179,5 +179,65 @@ noteModel.prototype.updateColor = (noteID, color, callback) => {
 }
 
 
+noteModel.prototype.editTitle = (noteID, updateTitle, callback) => {
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                title: updateTitle
+            }
+        },
+        (err, result) => {
+            if (err) {
+
+                callback(err)
+            } else {
+                return callback(null, updateTitle)
+            }
+        });
+};
+
+
+noteModel.prototype.editDescription = (noteID, updateDescription, callback) => {
+    console.log("came to model ");
+
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                description: updateDescription
+            }
+        },
+        (err, result) => {
+            if (err) {
+
+                callback(err)
+            } else {
+                return callback(null, updateDescription)
+            }
+        });
+};
+
+
+noteModel.prototype.doPinned = (noteID, doPinned, callback) => {
+    console.log("in model pinned",noteID,doPinned);
+    
+    note.findOneAndUpdate({
+        _id: noteID
+    }, {
+            $set: {
+                pinned: doPinned
+            }
+        }, (err, result) => {
+            if (err) {
+                callback(err)
+            } else {
+                return callback(null, doPinned)
+            }
+        })
+}
+
+
+
 
 module.exports = new noteModel();

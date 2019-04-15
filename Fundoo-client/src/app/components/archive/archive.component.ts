@@ -15,23 +15,21 @@ export class ArchiveComponent implements OnInit {
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
-    // this.getArchivedCards()
+    this.getArchivedCards()
   }
-
-  layout='row wrap'
-  // getArchivedCards() {
-  //   this.noteService.getNote().subscribe((data) => {
-  //     this.card = data['data']
-  //    
-  //     for (let i = 0; i < this.card.length; i++) {
-  //       if (this.card[i].archive) {
-  //         console.log("Entered");
-  //         this.archivedCard.push(this.card[i])
-  //         console.log("archivedcard notes", this.archivedCard);
-  //       }
-  //     }
-  //   }), err => {
-  //     console.log(err)
-  //   }
-  // }
+  getArchivedCards() {
+    this.noteService.getNote().subscribe((data) => {
+      this.card = data['data']
+     
+      for (let i = 0; i < this.card.length; i++) {
+        if (this.card[i].archive && ! this.card[i].trash) {
+          console.log("Entered");
+          this.archivedCard.push(this.card[i])
+          console.log("archivedcard notes", this.archivedCard);
+        }
+      }
+    }), err => {
+      console.log(err)
+    }
+  }
 }

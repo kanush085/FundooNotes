@@ -124,7 +124,49 @@ describe('Status and content', function () {
                                                                                                                                             console.log("expect ==>", res.body);
                                                                                                                                             res.should.have.status(200);
                                                                                                                                         }
-            
+                                                                                                                                        describe('editTitle', function () {
+                                                                                                                                            it('status ', function (done) {
+                                                                                                                                                chai.request(server).put('/editTitle').send(data1.editTitle).end((err, res) => {
+                                                                                                                                                    if (err) {
+                                                                                                                                                        console.log("expect ==>", err);
+                                                                                                                                                    } else {
+                                                                                                                                                        console.log("expect ==>", res.body);
+                                                                                                                                                        res.should.have.status(200);
+                                                                                                                                                    }
+                                                                                                                                                    describe('editDescription', function () {
+                                                                                                                                                        it('status ', function (done) {
+                                                                                                                                                            chai.request(server).put('/editDescription').send(data1.editDescription).end((err, res) => {
+                                                                                                                                                                if (err) {
+                                                                                                                                                                    console.log("expect ==>", err);
+                                                                                                                                                                } else {
+                                                                                                                                                                    console.log("expect ==>", res.body);
+                                                                                                                                                                    res.should.have.status(200);
+                                                                                                                                                                }
+                                                                                                                                                                describe('doPinned', function () {
+                                                                                                                                                                    it('status ', function (done) {
+                                                                                                                                                                        chai.request(server).put('/doPinned').send(data1.doPinned).end((err, res) => {
+                                                                                                                                                                            if (err) {
+                                                                                                                                                                                console.log("expect ==>", err);
+                                                                                                                                                                            } else {
+                                                                                                                                                                                console.log("expect ==>", res.body);
+                                                                                                                                                                                res.should.have.status(200);
+                                                                                                                                                                            }
+
+                                                                                                                                                                            done()
+                                                                                                                                                                        })
+                                                                                                                                                                    })
+                                                                                                                                                                })
+
+                                                                                                                                                                done()
+                                                                                                                                                            })
+                                                                                                                                                        })
+                                                                                                                                                    })
+
+                                                                                                                                                    done()
+                                                                                                                                                })
+                                                                                                                                            })
+                                                                                                                                        })
+
                                                                                                                                         done()
                                                                                                                                     })
                                                                                                                                 })

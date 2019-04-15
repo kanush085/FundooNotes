@@ -2,15 +2,15 @@
 	"register": {
 		"firstname": "anuuua",
 		"lastname": "ggggg",
-		"email": "anusah123456789123@gmail.com",
+		"email": "anusah123456789123456@gmail.com",
 		"password": "Ssaaaa@123456"
 	},
 	"login": {
-		"email": "anusah123456789123@gmail.com",
+		"email": "anusah123456789123456@gmail.com",
 		"password": "Ssaaaa@123456"
 	},
 	"forgotPassword": {
-		"email": "anusah123456789123@gmail.com"
+		"email": "anusah123456789123456@gmail.com"
 	},
 	"resetPassword": {
 		"password": "Ssaaaa@12",
@@ -35,5 +35,17 @@
 	"updateColor":{
 		"noteID": "5caf3f821dc782589e74c39e",
 		"color":"#84FFFF"
+	},
+	"editTitle":{
+		"noteID":"5cac4d05eab19a0a215e657e",
+		"title":"anusha"
+	},
+	"editDescription":{
+		"noteID":"5cac4d05eab19a0a215e657e",
+		"description":"anusha"
+	},
+	"doPinned":{
+		"noteID":"5cac4d05eab19a0a215e657e",
+		"pinned":"true"
 	}
 }

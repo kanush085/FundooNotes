@@ -198,4 +198,102 @@ exports.updateColor = (req, res) => {
 }
 
 
+exports.editTitle = (req, res) => {
+    try {
+        // console.log(req);
+
+        req.checkBody("noteID", "noteID is required").not().isEmpty();
+        var response = {}
+        var errors = req.validationErrors();
+        if (errors) {
+            response.status = false;
+            response.error = errors
+            return res.status(422).send(response)
+        } else {
+            var responseResult = {};
+            var noteID = req.body.noteID;
+            var updateTitle = req.body.title;
+            noteService.editTitle(noteID, updateTitle, (err, result) => {
+                if (err) {
+                    responseResult.status = false;
+                    responseResult.error = err
+                    return res.status(500).send(responseResult)
+                } else {
+                    responseResult.status = true;
+                    responseResult.data = result;
+                    return res.status(200).send(responseResult)
+                }
+            })
+        }
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+exports.editDescription = (req, res) => {
+    try {
+        req.checkBody("noteID", "noteID is required").not().isEmpty();
+        var response = {}
+        var errors = req.validationErrors();
+        if (errors) {
+            response.status = false;
+            response.error = errors
+            return res.status(422).send(response)
+        } else {
+            var responseResult = {};
+            var noteID = req.body.noteID;
+            var updateDescription = req.body.description;
+            noteService.editDescription(noteID, updateDescription, (err, result) => {
+                if (err) {
+                    responseResult.status = false;
+                    responseResult.error = err
+                    return res.status(500).send(responseResult)
+                } else {
+                    responseResult.status = true;
+                    responseResult.data = result;
+                    return res.status(200).send(responseResult)
+                }
+            })
+        }
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
+exports.doPinned = (req, res) => {
+    try {
+        // console.log("id", req.body.noteID);
+
+        req.checkBody('noteID', 'noteId is required').not().isEmpty();
+        var response = {}
+        var errors = req.validationErrors();
+        if (errors) {
+            response.status = false;
+            response.error = errors
+            return res.status(422).send(response)
+        }
+        else {
+            var responseResult = {};
+            var noteID = req.body.noteID;
+            var doPinned = req.body.pinned;
+            noteService.doPinned(noteID, doPinned, (err, result) => {
+                if (err) {
+                    responseResult.status = false;
+                    responseResult.error = err;
+                    return res.status(500).send(responseResult)
+                } else {
+                    responseResult.status = true;
+                    responseResult.data = result
+                    return res.status(200).send(responseResult)
+                }
+            })
+        }
+
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+
 

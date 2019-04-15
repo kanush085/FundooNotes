@@ -1,4 +1,9 @@
-
 <app-takenote (addingNote)="recieveMessage($event)"></app-takenote>
-
-<app-displaynote [cards]="cards" fxLayout="{{grid}}" fxLayoutAlign="center none"></app-displaynote>
+<div class="pinned">
+    PINNED
+</div>
+<app-displaynote [cards]="cards"  (Pinned)="recievePinned($event)"></app-displaynote>
+<div class="others">
+    OTHERS
+</div>
+<app-displaynote [cards]="Unpinnedcards" (UnPinned)="recieveUnPinned($event)"></app-displaynote>

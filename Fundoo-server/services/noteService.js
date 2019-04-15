@@ -82,3 +82,42 @@ exports.updateColor = (noteID, color, callback) => {
     })
 
 }
+
+
+exports.editTitle = (noteID, updateTitle, callback) => {
+    console.log("came to editTitle note service");
+    noteModel.editTitle(noteID, updateTitle, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+
+}
+
+exports.editDescription = (noteID, updateDescription, callback) => {
+    console.log("came to editTitle note service");
+    noteModel.editDescription(noteID, updateDescription, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+
+}
+
+
+exports.doPinned = (noteID, doPinned, callback) => {
+    console.log("came to pinned note service");
+    noteModel.doPinned(noteID, doPinned, (err, result) => {
+        if (err) {
+            callback(err);
+        } else {
+            return callback(null, result)
+        }
+    })
+
+}
+

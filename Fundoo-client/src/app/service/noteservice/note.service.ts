@@ -27,6 +27,18 @@ export class NoteService {
   updateColor(data) {
     return this.http.put('updateColor', data)
   }
+  
+  editTitle(data){
+    return this.http.put('editTitle',data)
+  }
+
+  editDescription(data){
+    return this.http.put('editDescription',data)
+  }
+
+  doPinned(data){
+    return this.http.put('doPinned',data)
+  }
 
 
 }

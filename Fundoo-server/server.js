@@ -5,7 +5,7 @@
  *  @author         : AnushKumar S K <anushk136@gmail.com>
  *  @since          : 19-03-2019
  ******************************************************************************/
-const route = require('../Fundoo-server/routes/routes')
+const route = require('./routes/routes')
 const express = require('express')
 const bodyParser = require('body-parser');
 /**

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject, Input } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import{DisplaynoteComponent, DialogData}from '../displaynote/displaynote.component'
 
 @Component({
   selector: 'app-updatenote',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdatenoteComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor( public dialogRef: MatDialogRef<DisplaynoteComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit() {
   }
+ 
+
+
 
 }

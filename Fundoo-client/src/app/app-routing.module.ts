@@ -9,6 +9,7 @@ import { NoteComponent } from './components/note/note.component';
 import { AuthGuard } from '../app/service/auth/auth.guard';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 const routes: Routes = [{
   path:'',
@@ -51,9 +52,13 @@ children:[
 {
   path : 'trash',
   component: TrashComponent
-}
-]
-}
+},
+
+],
+},{
+  path:'updatenote',
+  component:UpdatenoteComponent
+  }
 ];
 
 @NgModule({

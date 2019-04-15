@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit {
   labelList: any;
   email: string;
   username:string;
-  grid=false;
+  grid=true;
+  side=false;
   flag:boolean = true;
   private _mobileQueryListener: () => void;
   constructor(media: MediaMatcher,
@@ -58,15 +59,20 @@ reminders(){
 
 trashBox(){
   this.message="Trash"
-  // this.router.navigate(['dashboard/trash'])
+  this.router.navigate(['dashboard/trash'])
 }
 archive(){
   this.message="Archive"
-  // this.router.navigate(['dashboard/archive'])
+  this.router.navigate(['dashboard/archive'])
 }
 gridChange(){
 this.grid=!this.grid;
 this.service.changeMessage(this.grid);
 }
-
+sidnave(){
+  console.log('open strat');
+  this.side=!this.side;
+  this.service.sidenavChangeMessage(this.side)
+  
+}
 }

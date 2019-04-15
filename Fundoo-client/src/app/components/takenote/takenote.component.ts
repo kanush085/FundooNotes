@@ -11,7 +11,10 @@ import { EventEmitter } from "@angular/core";
 })
 export class TakenoteComponent implements OnInit {
   isArchive: boolean = false
+  isPinned:boolean=false
+  Pinned=true
   flag = true;
+  flag1=true
   reqbody: any
   bgcolor: any = "#FFFFFF";
   constructor(private httpService: HttpService,
@@ -38,7 +41,7 @@ export class TakenoteComponent implements OnInit {
         title: this.noteTitle.value,
         description: this.noteContent.value,
         reminder: "",
-        pinned: false,
+        pinned: this.isPinned,
         archive: this.isArchive,
         color: this.bgcolor,
         trash: false,
@@ -56,6 +59,12 @@ export class TakenoteComponent implements OnInit {
           console.log(err);
         };
     }
+  }
+  pinned(){    
+    this.Pinned=!this.Pinned
+  }
+  unpinned(){ 
+    this.Pinned=!this.Pinned
   }
   archive($event) {
     this.isArchive = $event

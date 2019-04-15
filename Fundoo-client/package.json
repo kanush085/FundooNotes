@@ -33,6 +33,7 @@
     "ng-sidebar": "^8.0.0",
     "ngx-snackbar": "^2.0.1",
     "rxjs": "6.0.0",
+    "saucelabs": "^2.1.7",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

@@ -115,12 +115,14 @@
                 <textarea class="textArea" matTextareaAutosize placeholder="Title" [formControl]="noteTitle"></textarea>
             </div>
             <div fxLayout="row">
-                <button matTooltip="Pin note" mat-icon-button color="basic">
-                    <div class="barpin">
+                <button  *ngIf="Pinned" matTooltip="Pin note" mat-icon-button color="basic"(click)="pinned()" class="barpin">
+                    
                           <img src="../../../assets/pinbar.svg" />
-                    </div>
-
                 </button>
+                <button *ngIf="!Pinned"  matTooltip="Upin note" mat-icon-button color="basic" (click)="unpinned()">
+                        <img src="../../../assets/unpinbar.svg">
+                </button>
+               
             </div>
         </div>
 

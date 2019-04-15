@@ -38,7 +38,7 @@ export class IconlistComponent implements OnInit {
       }).subscribe(data => {
         console.log(data, "archive data")
         this.cardArchive(card)
-        this.snackBar.open("Note Archived", "Undo", { duration: 5000 })
+        this.snackBar.open("Note Archived", "Ok", { duration: 5000 })
       }), err => console.log(err)
 
     }
@@ -66,7 +66,7 @@ export class IconlistComponent implements OnInit {
     }).subscribe(data => {
       console.log(data, "Delete data");
       this.deletCard(card)
-      this.snackBar.open("Note Trashed", "Undo", { duration: 5000 })
+      this.snackBar.open("Note Trashed", "Ok", { duration: 5000 })
     }), err => console.log(err);
 
   }

@@ -10,14 +10,15 @@ export class NoteComponent implements OnInit {
 
   constructor(private noteService: NoteService,private data: DataService) { }
   cards: any[]=[]
+  Unpinnedcards:any[]=[]
   Allcards: any[]=[]
   addnote: any
   message:string;
-  grid=''
+  grid='row wrap'
   ngOnInit() {
     this.getCards()
     this.data.currentMessage.subscribe(message=>{
-      console.log(message);
+      console.log("in note grid",message);
    if(message){
     this.grid='row wrap'
 
@@ -33,13 +34,20 @@ export class NoteComponent implements OnInit {
       var carddata = data['data']
       this.cards=[];
       for (let i = 0; i < carddata.length; i++) {
-        if(!carddata[i].archive && !carddata[i].trash)     
-     this.cards.push(carddata[i])
-  
+        if(!carddata[i].archive && !carddata[i].trash && carddata[i].pinned)
+        {
+          this.cards.push(carddata[i])
+        }     
+    else if(!carddata[i].archive && !carddata[i].trash && !carddata[i].pinned){
+      
+      this.Unpinnedcards.push(carddata[i])
       }
       console.log("array cards",this.cards);
-      
       this.cards = this.cards.reverse();
+
+     
+
+    }
     })
   }
 
@@ -60,7 +68,16 @@ export class NoteComponent implements OnInit {
 // }
 
 
-
+recievePinned($event){
+  // console.log("in $",$event);
+  let ind = this.cards.indexOf($event)
+    this.Unpinnedcards.splice(0,0,$event)
+    this.cards.splice(ind, 1)
+}
   
-
+recieveUnPinned($event){
+  let ind = this.Unpinnedcards.indexOf($event)
+this.Unpinnedcards.splice(ind,1)
+this.cards.splice(0,0, $event)
+}
 }
