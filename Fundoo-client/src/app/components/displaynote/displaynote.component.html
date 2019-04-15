@@ -85,10 +85,10 @@
                     {{array.title}}
                 </div>
                 <div>
-                    <button *ngIf="array.pinned" matTooltip="Pin note" mat-icon-button color="basic" (click)=doUnPinned(array)>
+                    <button *ngIf="array.pinned" matTooltip="Unpin note" mat-icon-button color="basic" (click)=doUnPinned(array)>
                         <img src="../../../assets/unpinbar.svg">
                     </button>
-                    <button *ngIf="!array.pinned" matTooltip="Unpin note" mat-icon-button color="basic" (click)=doPinned(array)>
+                    <button *ngIf="!array.pinned" matTooltip="Pin note"  mat-icon-button color="basic" (click)=doPinned(array)>
                         <img  src="../../../assets/pinbar.svg">
                     </button>
               

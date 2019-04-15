@@ -127,13 +127,14 @@ doPinned(array){
   this.noteService.doPinned({
   "pinned":true,
   "noteID":[array._id]
-  }).subscribe(data=>{
+  }).subscribe( data=>{
     console.log("data in pinned",data);
     this.unPinbar(array)
   })
 }
 
 pinbar(array){
+   array.pinned=false
   this.Pinned.emit(array)
 }
 
@@ -144,12 +145,14 @@ doUnPinned(array){
     "noteID":[array._id]
   }).subscribe(data=>{
     console.log("data in unpinned",data);
+
     this.pinbar(array)
   })
 }
 
 
 unPinbar(array){
+ array.pinned=true
 this.UnPinned.emit(array)
 }
 }
