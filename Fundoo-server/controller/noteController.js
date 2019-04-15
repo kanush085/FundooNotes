@@ -39,7 +39,11 @@ exports.createNote = (req, res) => {
     }
 }
 
-
+/**
+ * @description:it handles the getNotes  data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.getNotes = (req, res) => {
     // console.log("============================"+req.body);
     console.log("coming from frontend");
@@ -69,7 +73,11 @@ exports.getNotes = (req, res) => {
     }
 }
 
-
+/**
+ * @description:it handles the Archived note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.isArchived = (req, res) => {
     // console.log("controller",req);
 
@@ -104,7 +112,11 @@ exports.isArchived = (req, res) => {
     }
 }
 
-
+/**
+ * @description:it handles the Trashed note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.isTrashed = (req, res) => {
     try {
         req.checkBody('noteID', 'noteID required').not().isEmpty();
@@ -135,7 +147,11 @@ exports.isTrashed = (req, res) => {
         res.send(error)
     }
 }
-
+/**
+ * @description:it handles the deleteNote note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.deleteNote = (req, res) => {
     try {
         console.log("*****came to ctrl**")
@@ -165,7 +181,11 @@ exports.deleteNote = (req, res) => {
         res.send(error)
     }
 }
-
+/**
+ * @description:it handles the updateColor note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.updateColor = (req, res) => {
     try {
         req.checkBody("noteID", "noteID is required").not().isEmpty();
@@ -197,7 +217,11 @@ exports.updateColor = (req, res) => {
     }
 }
 
-
+/**
+ * @description:it handles the editTitle note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.editTitle = (req, res) => {
     try {
         // console.log(req);
@@ -229,7 +253,11 @@ exports.editTitle = (req, res) => {
         res.send(error)
     }
 }
-
+/**
+ * @description:it handles the editDescription note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.editDescription = (req, res) => {
     try {
         req.checkBody("noteID", "noteID is required").not().isEmpty();
@@ -260,7 +288,11 @@ exports.editDescription = (req, res) => {
     }
 }
 
-
+/**
+ * @description:it handles the Pinned note data
+ * @param {*request from frontend} req 
+ * @param {*response from backend} res 
+ */
 exports.doPinned = (req, res) => {
     try {
         // console.log("id", req.body.noteID);

@@ -177,6 +177,12 @@ noteModel.prototype.updateColor = (noteID, color, callback) => {
             }
         })
 }
+/**
+ * @description:
+ * @param {*} noteID 
+ * @param {*} updateTitle 
+ * @param {*} callback 
+ */
 
 
 noteModel.prototype.editTitle = (noteID, updateTitle, callback) => {
@@ -196,6 +202,12 @@ noteModel.prototype.editTitle = (noteID, updateTitle, callback) => {
             }
         });
 };
+/**
+ * @description:
+ * @param {*} noteID 
+ * @param {*} updateDescription 
+ * @param {*} callback 
+ */
 
 
 noteModel.prototype.editDescription = (noteID, updateDescription, callback) => {
@@ -218,6 +230,12 @@ noteModel.prototype.editDescription = (noteID, updateDescription, callback) => {
         });
 };
 
+/**
+ * @description:
+ * @param {*} noteID 
+ * @param {*} doPinned 
+ * @param {*} callback 
+ */
 
 noteModel.prototype.doPinned = (noteID, doPinned, callback) => {
     console.log("in model pinned",noteID,doPinned);
