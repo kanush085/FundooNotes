@@ -11,12 +11,12 @@ import { EventEmitter } from "@angular/core";
 })
 export class TakenoteComponent implements OnInit {
   isArchive: boolean = false
-  isPinned:boolean=false
-  Pinned=true
+  isPinned:boolean = false; 
+  Pinned=false
   flag = true;
-  flag1=true
   reqbody: any
   bgcolor: any = "#FFFFFF";
+
   constructor(private httpService: HttpService,
     private router: Router,
   ) { }
@@ -31,6 +31,7 @@ export class TakenoteComponent implements OnInit {
 
   addNote() {
     this.flag = !this.flag;
+  
     if ((this.noteTitle.value == null || this.noteTitle.value == '') && (this.noteContent.value == null || this.noteContent.value == '')) {
       this.bgcolor="#FFFFFF"
       return
@@ -53,25 +54,27 @@ export class TakenoteComponent implements OnInit {
         this.addingNote.emit(data['message'])
         this.noteTitle.reset()
         this.noteContent.reset()
+        // this.isPinned=false
         this.bgcolor="#FFFFFF"
       }),
         err => {
           console.log(err);
         };
     }
+    this.Pinned=!this.Pinned
   }
   pinned(){    
     this.Pinned=!this.Pinned
+    this.isPinned = true;
   }
-  unpinned(){ 
-    this.Pinned=!this.Pinned
-  }
+  
   archive($event) {
     this.isArchive = $event
     this.addNote()
   }
   reverseFlag() {
     this.flag = !this.flag;
+    
   }
   changeColor($event) {
     this.bgcolor = $event

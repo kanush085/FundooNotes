@@ -220,19 +220,19 @@
 //   padding-bottom: 4px;
 //   max-width: 240px;
 // }
-.icon{
+// .icon{
 
-  opacity: 0;
-&:hover{
-opacity: 1.4;
-}
-}
+//   opacity: 0;
+// &:hover{
+// opacity: 1.4;
+// }
+// }
 
 .barpin {
   border: none;
   outline: none;
   user-select: none;
-  margin-top: 6px
+  margin-top: -10px;
 }
 .cardcontent{
 padding: 5px
@@ -328,4 +328,22 @@ padding: 5px
       max-width: 100%;
     }
   }
+}
+
+.barpin{
+  visibility: hidden;
+
+}
+
+.matcard:hover .barpin{
+visibility: visible;
+}
+
+.icon{
+  visibility: hidden;
+  opacity: 0;
+}
+.matcard:hover .icon{
+  visibility:visible;
+  opacity: 1.4;
 }

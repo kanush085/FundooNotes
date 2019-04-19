@@ -36,6 +36,7 @@ import { UpdatenoteComponent } from './components/updatenote/updatenote.componen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { UpdatenoteComponent } from './components/updatenote/updatenote.componen
     ArchiveComponent,
     TrashComponent,
     UpdatenoteComponent,
+
 
 
 

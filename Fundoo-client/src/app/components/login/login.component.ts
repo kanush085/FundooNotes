@@ -49,6 +49,9 @@ export class LoginComponent implements OnInit {
 this.userService.login(model).subscribe(data =>{
   console.log(data);
   this.response=data;
+
+  console.log("helllllllllllllllllllllllllllllllllo");
+  
   // const helper = new JwtHelperService();
   // const decoded= helper.decodeToken(this.response.token);
   // console.log("----------------------------------",decoded);
@@ -80,4 +83,8 @@ this.userService.login(model).subscribe(data =>{
     this.router.navigate(['forgotpassword']);
   }
   matcher = new MyErrorStateMatcher();
+
+  funtion ;helloworld(){
+return 'helo anush'
+  }
 }

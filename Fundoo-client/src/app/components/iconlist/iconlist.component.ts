@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input,ViewEncapsulation } from '@angular/core';
 import { NoteService } from 'src/app/service/noteservice/note.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 
 
 @Component({
@@ -29,6 +29,7 @@ export class IconlistComponent implements OnInit {
     // console.log(this.card, "cardddd")
     // console.log(card._id, "cardidddddddddd")
     if (card == undefined) {
+
       this.archivednoteCard.emit(true)
     }
     else {
@@ -42,9 +43,12 @@ export class IconlistComponent implements OnInit {
       }), err => console.log(err)
 
     }
+
+    
   }
 
   cardArchive(card) {
+    card.archive=true
     this.archivedCard.emit(card)
   }
   doUnArchive(card) {
@@ -56,6 +60,7 @@ export class IconlistComponent implements OnInit {
     }), err => console.log(err)
   }
   notArchive(card) {
+    card.archive=false
     this.unarchiveCard.emit(card)
   }
 
@@ -72,6 +77,7 @@ export class IconlistComponent implements OnInit {
   }
 
   deletCard(card) {
+    card.trash=true
     this.trashCard.emit(card)
   }
 
@@ -116,5 +122,6 @@ export class IconlistComponent implements OnInit {
       console.log(data, "update color data")
     }), err => console.log(err)
   }
+
 
 }

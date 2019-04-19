@@ -5,8 +5,8 @@ import { MatDialog } from '@angular/material';
 import { UpdatenoteComponent } from "../updatenote/updatenote.component";
 
 export interface DialogData {
-  array: [];
-
+  array: Array<any>;
+  
 }
 
 @Component({
@@ -17,13 +17,15 @@ export interface DialogData {
 export class DisplaynoteComponent implements OnInit {
   @Input() cards;
   @Input() archived
-  @Input() more: string;
+  
   @Input() trash
 
   @Output() Pinned=new EventEmitter();
   @Output() UnPinned=new EventEmitter();
+  @Output() isPinned=new EventEmitter();
   message: string;
   pinned=true
+  ispinbar:boolean
   view;
   side = false;
   grid = {
@@ -55,22 +57,36 @@ export class DisplaynoteComponent implements OnInit {
 
     })
   }
-  openDialog(array) {
+  openDialog(array,trash) {
+    
+      this.ispinbar=array.pinned
+      var isArchive=array.archive
+      var deletcard=array.trash
     const dialogRef = this.dialog.open(UpdatenoteComponent, {
       width: '600px',
-      data: { array }
+      data: { array,trash }
 
     });
     dialogRef.afterClosed().subscribe(result => {
 
       console.log('The dialog was closed', result);
-
-
+      if(this.ispinbar!=result.array.pinned)
+      {
+        this.isPinned.emit(result.array)
+      }
+     if(isArchive!=result.array.archive || deletcard!=result.array.trash)
+     {
+       let ind=this.cards.indexOf(result.array)
+      if(ind!=-1)
+      {
+        this.cards.splice(ind,1)
+      }
+     }
       this.noteService.editTitle({
         "noteID": result['array']._id,
         "title": result['array'].title
       }).subscribe(result => {
-        console.log(result);
+        console.log("********************",result);
       })
     });
 
@@ -83,7 +99,7 @@ export class DisplaynoteComponent implements OnInit {
         console.log(result)
       })
     })
-
+   
 
   }
 

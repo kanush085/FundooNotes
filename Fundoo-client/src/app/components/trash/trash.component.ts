@@ -11,7 +11,7 @@ export class TrashComponent implements OnInit {
   card: any = []
   trashedCard = []
   trash = []
-  more = 'trash'
+   more='trash'
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {

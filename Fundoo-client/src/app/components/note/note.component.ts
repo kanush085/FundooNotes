@@ -80,4 +80,22 @@ recieveUnPinned($event){
 this.Unpinnedcards.splice(ind,1)
 this.cards.splice(0,0, $event)
 }
+
+recieveisPinned($event){
+  console.log($event,"in note");
+  
+  if($event.pinned==true)
+  {
+  let ind = this.Unpinnedcards.indexOf($event)
+    this.Unpinnedcards.splice(ind,1)
+    this.cards.splice(0,0,$event)
+ 
+  }else{
+    let ind = this.cards.indexOf($event)
+    this.Unpinnedcards.splice(0,0,$event)
+    this.cards.splice(ind, 1)
+  }
 }
+
+}
+

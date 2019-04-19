@@ -81,11 +81,11 @@
         <mat-card class="matcard" fxLayout='column' *ngFor='let array of cards' [style.backgroundColor]="array.color">
 
             <div fxLayout='row' fxLayoutAlign="space-between center" >
-                <div class="title" (click)="openDialog(array)">
+                <div class="title" (click)="openDialog(array,trash)">
                     {{array.title}}
                 </div>
-                <div>
-                    <button *ngIf="array.pinned" matTooltip="Unpin note" mat-icon-button color="basic" (click)=doUnPinned(array)>
+                <div  class="barpin" >
+                    <button  *ngIf="array.pinned" matTooltip="Unpin note" mat-icon-button color="basic" (click)=doUnPinned(array)>
                         <img src="../../../assets/unpinbar.svg">
                     </button>
                     <button *ngIf="!array.pinned" matTooltip="Pin note"  mat-icon-button color="basic" (click)=doPinned(array)>
