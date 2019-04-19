@@ -104,7 +104,7 @@ noteModel.prototype.isArchived = (noteID, archiveNote, callback) => {
             if (err) {
                 callback(err)
             } else {
-
+                console.log(archiveNote);
                 return callback(null, archiveNote)
             }
         });
