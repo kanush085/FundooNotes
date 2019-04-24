@@ -9,8 +9,6 @@ import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { DebugElement } from '@angular/core';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
@@ -62,6 +60,7 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('form should be invaild',async(()=>{
 component.emailFormControl.setValue('')
 component.password.setValue('')
